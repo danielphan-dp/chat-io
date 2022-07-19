@@ -13,30 +13,38 @@ const setUserDetails = (userDetails) => {
   };
 };
 
-const login = (userDetails, history) => {
+const login = (userDetails, navigate) => {
   return async (dispatch) => {
     const response = await authApi.login(userDetails);
+
+    // TODO: remove log when finished testing
+    console.log(response);
+
     if (response.error) {
       // TODO: show error message in alert
     } else {
-      const { userDetails } = response.data;
+      const { userDetails } = response?.data;
       localStorage.setItem('user', JSON.stringify(userDetails));
       dispatch(setUserDetails(userDetails));
-      history.push('/dashboard');
+      navigate('/dashboard');
     }
   };
 };
 
-const register = (userDetails, history) => {
+const register = (userDetails, navigate) => {
   return async (dispatch) => {
     const response = await authApi.register(userDetails);
+
+    // TODO: remove log when finished testing
+    console.log(response);
+
     if (response.error) {
       // TODO: show error message in alert
     } else {
-      const { userDetails } = response.data;
+      const { userDetails } = response?.data;
       localStorage.setItem('user', JSON.stringify(userDetails));
       dispatch(setUserDetails(userDetails));
-      history.push('/dashboard');
+      navigate('/dashboard');
     }
   };
 };
