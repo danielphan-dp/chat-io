@@ -23,14 +23,21 @@ import reportWebVitals from './reportWebVitals';
 // ----------------------
 // | App Root Component |
 // ----------------------
+const USE_STRICT_MODE = false;
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-  <React.StrictMode>
+  USE_STRICT_MODE ? (
+    <React.StrictMode>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </React.StrictMode>
+  ) : (
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>
+  )
 );
 
 // -----------------------------

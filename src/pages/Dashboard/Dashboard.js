@@ -9,6 +9,7 @@ import { logout } from '../../shared/utils/auth';
 
 import { connect } from 'react-redux';
 import { getActions } from '../../store/actions/authActions';
+import { connectWithSocketServer } from '../../networking/realtime-communication/socketConnection';
 
 const Wrapper = styled('div')({
   width: '100%',
@@ -18,11 +19,13 @@ const Wrapper = styled('div')({
 
 const Dashboard = ({ setUserDetails }) => {
   useEffect(() => {
+    console.log('here');
     const userDetails = localStorage.getItem('user');
     if (!userDetails) {
       logout();
     } else {
       setUserDetails(JSON.parse(userDetails));
+      connectWithSocketServer();
     }
   }, []);
 
