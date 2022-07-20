@@ -1,9 +1,6 @@
-import { authActions } from '../actions/authActions';
+import authActions from '../actions/authActions';
 
-const initialState = {
-  type: null,
-  payload: {},
-};
+const initialState = {};
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;

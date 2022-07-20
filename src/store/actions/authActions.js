@@ -1,6 +1,7 @@
 import * as authApi from '../../networking/api/authApi';
+import { openAlertMessage } from './alertActions';
 
-export const authActions = {
+const authActions = {
   SET_USER_DETAILS: 'AUTH.SET_USER_DETAILS',
 };
 
@@ -21,7 +22,8 @@ const login = (userDetails, navigate) => {
     console.log(response);
 
     if (response.error) {
-      // TODO: show error message in alert
+      // show error message in alert
+      dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem('user', JSON.stringify(userDetails));
@@ -39,7 +41,8 @@ const register = (userDetails, navigate) => {
     console.log(response);
 
     if (response.error) {
-      // TODO: show error message in alert
+      // show error message in alert
+      dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem('user', JSON.stringify(userDetails));
@@ -51,8 +54,10 @@ const register = (userDetails, navigate) => {
 
 export const getActions = (dispatch) => {
   return {
-    login: (userDetails, history) => dispatch(login(userDetails, history)),
-    register: (userDetails, history) =>
-      dispatch(register(userDetails, history)),
+    login: (userDetails, navigate) => dispatch(login(userDetails, navigate)),
+    register: (userDetails, navigate) =>
+      dispatch(register(userDetails, navigate)),
   };
 };
+
+export default authActions;

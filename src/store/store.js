@@ -6,12 +6,14 @@ import thunk from 'redux-thunk';
 // | Import created reducers |
 // ---------------------------
 import authReducer from './reducers/authReducer';
+import alertReducer from './reducers/alertReducer';
 
 // ---------------------------
 // | Create the Core Reducer |
 // ---------------------------
 const rootReducer = combineReducers({
   auth: authReducer,
+  alert: alertReducer,
 });
 
 // --------------------------------------

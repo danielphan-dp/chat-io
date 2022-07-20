@@ -6,6 +6,7 @@ import RegisterPage from './pages/AuthPages/RegisterPage/RegisterPage';
 import Dashboard from './pages/Dashboard/Dashboard';
 
 import './App.css';
+import AlertNotification from './shared/components/AlertNotification';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/" element={<Navigate replace to="/dashboard" />} />
         </Routes>
       </BrowserRouter>
+      <AlertNotification />
     </React.Fragment>
   );
 };
