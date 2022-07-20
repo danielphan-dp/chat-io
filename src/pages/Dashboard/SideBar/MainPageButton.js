@@ -8,7 +8,7 @@ const MainPageButton = () => {
       style={{
         width: '48px',
         height: '48px',
-        borderRadius: '16px',
+        borderRadius: '5px',
         margin: 0,
         padding: 0,
         minWidth: 0,

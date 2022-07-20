@@ -5,7 +5,7 @@ import AddFriendDialog from './AddFriendDialog';
 const additionalStyles = {
   marginTop: '10px',
   marginLeft: '5px',
-  width: '80%',
+  width: '90%',
   height: '30px',
   background: '#3ba55d',
 };
