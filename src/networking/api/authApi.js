@@ -1,6 +1,9 @@
 import apiClient from './apiClient';
 import { logout } from '../../shared/utils/auth';
 
+// ------------------------
+// | Token Authentication |
+// ------------------------
 apiClient.interceptors.request.use(
   (config) => {
     const userDetails = localStorage.getItem('user');
@@ -15,7 +18,10 @@ apiClient.interceptors.request.use(
   }
 );
 
-// public routes
+// -----------------
+// | Public Routes |
+// -----------------
+// Register a new account
 export const register = async (data) => {
   try {
     return await apiClient.post('/auth/register', data);
@@ -27,6 +33,7 @@ export const register = async (data) => {
   }
 };
 
+// Log-in authentication if an account has been created
 export const login = async (data) => {
   try {
     return await apiClient.post('/auth/login', data);
@@ -38,7 +45,27 @@ export const login = async (data) => {
   }
 };
 
-// secure routes
+// -----------------
+// | Secure Routes |
+// -----------------
+// Sending friend invitation to another user
+export const sendFriendInvitation = async (data) => {
+  try {
+    return await apiClient.post('/friend-invitation/invite', data);
+  } catch (exception) {
+    checkResponseCode();
+    return {
+      error: true,
+      exception,
+    };
+  }
+};
+
+// ------------------------
+// | Malicious User Guard |
+// ------------------------
+// Check if the server has detected the user is trying to access a secure route.
+// If yes, the user will be logged out.
 export const checkResponseCode = (exception) => {
   const responseCode = exception?.response?.status;
   if (responseCode) {

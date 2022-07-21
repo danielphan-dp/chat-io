@@ -19,13 +19,16 @@ const Wrapper = styled('div')({
 
 const Dashboard = ({ setUserDetails }) => {
   useEffect(() => {
-    console.log('here');
+    // TODO: remove when finished testing
+    // Important: useEffect will be called twice when strict mode is on
+
     const userDetails = localStorage.getItem('user');
     if (!userDetails) {
       logout();
     } else {
+      console.log('here--');
       setUserDetails(JSON.parse(userDetails));
-      connectWithSocketServer();
+      connectWithSocketServer(JSON.parse(userDetails));
     }
   }, []);
 

@@ -2,8 +2,17 @@ import io from 'socket.io-client';
 
 let socket = null;
 
-export const connectWithSocketServer = () => {
-  socket = io('http://localhost:5002');
+export const connectWithSocketServer = (userDetails) => {
+  const jwtToken = userDetails.token;
+
+  // initialize connection with the back-end
+  socket = io('http://localhost:5002', {
+    auth: {
+      token: jwtToken,
+    },
+  });
+
+  // signal when successfully connect
   socket.on('connect', () => {
     console.log('successfully connected with socket.io server');
     console.log(socket.id);
