@@ -5,7 +5,7 @@
 import io from 'socket.io-client';
 
 // Redux store functionalities for state management
-import store from '../../store';
+import store from '../../store/store';
 import { setPendingFriendsInvitations } from '../../store/actions/friendsActions';
 
 // ----------------------------------------------
@@ -37,11 +37,12 @@ export const connectWithSocketServer = (userDetails) => {
 
   // server signal: friends-invitations
   // signal when there is new pending invitations
-  socket.io('friends-invitations', (serverData) => {
+  socket.on('friends-invitations', (serverData) => {
     // TODO: remove when finished testing
     console.log(
       'Server signal: friends-invitations. Successfully receive pending friends invitations.'
     );
+    console.log(serverData);
 
     // update Redux store
     const { pendingInvitations } = serverData;
