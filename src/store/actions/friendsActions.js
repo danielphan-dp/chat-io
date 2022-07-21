@@ -28,10 +28,36 @@ export const sendFriendInvitation = (data, closeDialogHandler) => {
   };
 };
 
+export const acceptFriendInvitation = ({ requestData }) => {
+  return async (dispatch) => {
+    const response = await authApi.acceptFriendInvitation(requestData);
+    if (response.error) {
+      dispatch(openAlertMessage(response.exception?.response?.data));
+    } else {
+      dispatch(openAlertMessage('Invitation accepted!'));
+    }
+  };
+};
+
+export const rejectFriendInvitation = ({ requestData }) => {
+  return async (dispatch) => {
+    const response = await authApi.rejectFriendInvitation(requestData);
+    if (response.error) {
+      dispatch(openAlertMessage(response.exception?.response?.data));
+    } else {
+      dispatch(openAlertMessage('Invitation rejected!'));
+    }
+  };
+};
+
 export const getActions = (dispatch) => {
   return {
     sendFriendInvitation: (data, closeDialogHandler) =>
       dispatch(sendFriendInvitation(data, closeDialogHandler)),
+    acceptFriendInvitation: (data) =>
+      dispatch(acceptFriendInvitation({ requestData: data })),
+    rejectFriendInvitation: (data) =>
+      dispatch(rejectFriendInvitation({ requestData: data })),
   };
 };
 

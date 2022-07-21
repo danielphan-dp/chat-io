@@ -49,11 +49,37 @@ export const login = async (data) => {
 // | Secure Routes |
 // -----------------
 // Sending friend invitation to another user
-export const sendFriendInvitation = async (data) => {
+export const sendFriendInvitation = async (requestData) => {
   try {
-    return await apiClient.post('/friend-invitation/invite', data);
+    return await apiClient.post('/friend-invitation/invite', requestData);
   } catch (exception) {
-    checkResponseCode();
+    checkResponseCode(exception);
+    return {
+      error: true,
+      exception,
+    };
+  }
+};
+
+// Accept friend invitation from another user
+export const acceptFriendInvitation = async (requestData) => {
+  try {
+    return await apiClient.post('/friend-invitation/accept', requestData);
+  } catch (exception) {
+    checkResponseCode(exception);
+    return {
+      error: true,
+      exception,
+    };
+  }
+};
+
+// Reject friend invitation from another user
+export const rejectFriendInvitation = async (requestData) => {
+  try {
+    return await apiClient.post('/friend-invitation/reject', requestData);
+  } catch (exception) {
+    checkResponseCode(exception);
     return {
       error: true,
       exception,
