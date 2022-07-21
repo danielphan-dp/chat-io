@@ -7,7 +7,16 @@ export const friendsActions = {
   SET_ONLINE_USERS: 'FRIENDS.SET_ONLINE_USERS',
 };
 
-const sendFriendInvitation = (data, closeDialogHandler) => {
+export const setPendingFriendsInvitations = (pendingFriendsInvitations) => {
+  return {
+    type: friendsActions.SET_PENDING_FRIENDS_INVITATIONS,
+    payload: {
+      pendingFriendsInvitations,
+    },
+  };
+};
+
+export const sendFriendInvitation = (data, closeDialogHandler) => {
   return async (dispatch) => {
     const response = await authApi.sendFriendInvitation(data);
     if (response.error) {
