@@ -18,8 +18,8 @@ const login = (userDetails, navigate) => {
   return async (dispatch) => {
     const response = await authApi.login(userDetails);
 
-    // TODO: remove log when finished testing
-    console.log(response);
+    // LOG: remove log when finished testing
+    // console.log(response);
 
     if (response.error) {
       // show error message in alert
@@ -37,8 +37,8 @@ const register = (userDetails, navigate) => {
   return async (dispatch) => {
     const response = await authApi.register(userDetails);
 
-    // TODO: remove log when finished testing
-    console.log(response);
+    // LOG: remove log when finished testing
+    // console.log(response);
 
     if (response.error) {
       // show error message in alert
