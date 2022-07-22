@@ -7,14 +7,14 @@ import io from 'socket.io-client';
 // Redux store functionalities for state management
 import store from '../../store/store';
 import {
-  setPendingFriendsInvitations,
   setFriends,
+  setPendingFriendsInvitations,
+  setOnlineUsers,
 } from '../../store/actions/friendsActions';
 
 // ----------------------------------------------
 // | The Web Socket for Client-Server Interface |
 // ----------------------------------------------
-// TODO: refactor to separate functions
 let socket = null;
 
 // ---------------------------
@@ -63,5 +63,18 @@ export const connectWithSocketServer = (userDetails) => {
     // update Redux store
     const { friends } = serverData;
     store.dispatch(setFriends(friends));
+  });
+
+  // SERVER SIGNAL: online-users
+  socket.on('online-users', (serverData) => {
+    // LOG: remove when finished testing
+    // console.log(
+    //   'Server signal: online-users. Successfully receive online users.'
+    // );
+    // console.log(serverData);
+
+    // update Redux store
+    const { onlineUsers } = serverData;
+    store.dispatch(setOnlineUsers(onlineUsers));
   });
 };
