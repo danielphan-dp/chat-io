@@ -12,6 +12,9 @@ import {
   setOnlineUsers,
 } from '../../store/actions/friendsActions';
 
+// Helper functions
+import { updateDirectChatHistoryIfActive } from '../../shared/utils/chat';
+
 // ----------------------------------------------
 // | The Web Socket for Client-Server Interface |
 // ----------------------------------------------
@@ -77,4 +80,46 @@ export const connectWithSocketServer = (userDetails) => {
     const { onlineUsers } = serverData;
     store.dispatch(setOnlineUsers(onlineUsers));
   });
+
+  // SERVER SIGNAL: direct-chat-history
+  socket.on('direct-chat-history', (serverData) => {
+    // LOG: remove when finished testing
+    // console.log(
+    //   'Server signal: direct-chat-history. Successfully receive chat history.'
+    // );
+    // console.log(serverData);
+
+    // update Redux store
+    updateDirectChatHistoryIfActive(serverData);
+  });
+
+  // SERVER SIGNAL:
+  // socket.on('online-users', (serverData) => {
+  //   // LOG: remove when finished testing
+  //   // console.log(
+  //   //   'Server signal: online-users. Successfully receive online users.'
+  //   // );
+  //   // console.log(serverData);
+
+  //   // update Redux store
+  //   const { onlineUsers } = serverData;
+  //   store.dispatch(setOnlineUsers(onlineUsers));
+  // });
+};
+
+// --------------------------------------------
+// | FUNCTIONS TO SEND REQUESTS TO THE SERVER |
+// --------------------------------------------
+export const sendDirectMessage = (clientData) => {
+  // LOG: remove when finished testing
+  // console.log(clientData);
+
+  socket.emit('direct-message', clientData);
+};
+
+export const getDirectChatHistory = (clientData) => {
+  // LOG: remove when finished testing
+  // console.log(clientData);
+
+  socket.emit('direct-chat-history', clientData);
 };
