@@ -21,19 +21,19 @@ export const chatActions = {
 // ----------------------
 // | Store State Access |
 // ----------------------
-export const setChosenChatDetails = (chatType, chatDetails) => {
+export const setChosenChatDetails = (chatType, chosenChatDetails) => {
   return {
     type: chatActions.SET_CHOSEN_CHAT_DETAILS,
     payload: {
       chatType,
-      chatDetails,
+      chosenChatDetails,
     },
   };
 };
 
 export const setMessages = (chatMessages) => {
   return {
-    type: chatActions.SET_CHOSEN_CHAT_DETAILS,
+    type: chatActions.SET_MESSAGES,
     payload: {
       chatMessages,
     },
@@ -43,7 +43,7 @@ export const setMessages = (chatMessages) => {
 // ----------------------
 // | Actions Generators |
 // ----------------------
-// There is no actions generators at the moments
+// There is no actions generators at the moments.
 
 // -------------------
 // | Package Actions |
@@ -51,8 +51,8 @@ export const setMessages = (chatMessages) => {
 export const getActions = (dispatch) => {
   return {
     // store access and modify
-    setChosenChatDetails: (chatType, chatDetails) =>
-      dispatch(setChosenChatDetails(chatType, chatDetails)),
+    setChosenChatDetails: (chatType, chosenChatDetails) =>
+      dispatch(setChosenChatDetails(chatType, chosenChatDetails)),
     setMessages: (chatMessages) => dispatch(setMessages(chatMessages)),
   };
 };

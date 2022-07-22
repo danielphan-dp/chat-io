@@ -2,9 +2,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
-// ---------------------------
-// | Import created reducers |
-// ---------------------------
+// -------------------------------------
+// | Import Function-specific Reducers |
+// -------------------------------------
 import authReducer from './reducers/authReducer';
 import alertReducer from './reducers/alertReducer';
 import friendsReducer from './reducers/friendsReducer';

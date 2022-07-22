@@ -8,6 +8,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;
+  // const { friend, pendingFriendsInvitations, onlineUsers } = payload;
   switch (type) {
     case friendsActions.SET_FRIENDS:
       return {
