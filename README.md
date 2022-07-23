@@ -67,39 +67,68 @@ A real-time full-stack web application that support many useful features includi
   npm install
   ```
 
-### Run and Test
+### Run
 
-### Notes
+To test the features, it is the best to run the front-end and the back-end in two separate terminals.
+
+- Start a new terminal window, go to the back-end folder, and run the server.
+
+  ```sh
+  cd <FOLDER-OF-BACK-END-REPO>
+  npm start
+  ```
+
+- Start a new terminal window, go the to the front-end folder, and run the front-end dev server.
+  
+  ```sh
+  cd <FOLDER-OF-FRONT-END-REPO>
+  npm start
+  ```
+
+- The application should be available in `localhost:3000`.
+
+
+### Others
 
 Automation shell scripts coming soon!
 
 ## Usage
 
-In progress...
+In progress... Check back soon!
 
 ## Features
 
+### Current Features
+
+- [x] Auto-matic Real-time Features without User Refreshing the Browser
+- [x] Real-time Private Text Messaging System
+- [x] Real-time Updates
+- [x] Friends Systems
+- [x] User Account Management and Authentication
+- [x] Intuitive and Easy-to-use User Interface
+
+### Planned Features
+
 - [ ] Real-time Video Calling
-- [ ] Real-time Text Messaging System
-- [ ] Real-time Updates
-- [ ] Friends Management System
-- [ ] User Account Management
-  - [ ] Registering a New Account
-  - [ ] Log in with an Existing Account
-- [ ] Intuitive and Easy-to-use User Interface
-
-## Planned Features
-
 - [ ] GUI Themes and Modes
   - [ ] Dark Mode, Light Mode, etc.
   - [ ] Switchers Functionality for Themes and Modes
-- [ ] Chat Cells with the Ability of Rendering (and Run if Applicable) Different Content Types
+- [ ] Chat Message Cells of Different Content Types
   - [ ] Markdown Cells
   - [ ] Code Cells (with Syntax Highlighting)
   - [ ] LaTeX Cells
   - [ ] React Components Cells
   - [ ] Etc.
 - [ ] Advanced Features:
+  - [ ] In-browser Transpiler and Bundler (with Webpack or EsBuild)
+    - [ ] Render React Code Cells
+    - [ ] Execute JavaScript Functions
+  - [ ] Security:
+    - [ ] For Running Code Cells
+      - [ ] Safely User Execute Code in Browser with Sand-boxing Techniques
+  - [ ] Machine Learning
+    - [ ] Automatic Text Completion
+    - [ ] Natural Language Processing Bots
 
 ## Contributing
 
@@ -112,25 +141,23 @@ If you have a suggestion that would make this better, please fork the repo and c
 2. Create your Feature Branch
 
     ```sh
-    git checkout -b feature/AmazingFeature
+    git checkout -b feature/<YOUR-AMAZING-PROPOSED-FEATURE>
     ```
 
 3. Commit your Changes
 
     ```sh
-    git commit -m 'Add some AmazingFeature'
+    git commit -m <YOUR-COMMIT-MESSAGE>
     ```
 
 4. Push to the Branch
 
     ```sh
-    git commit -m 'git push origin feature/AmazingFeature'
+    git commit -m 'git push origin feature/<YOUR-AMAZING-PROPOSED-FEATURE>'
     ```
 
 5. Open a Pull Request
 
 ## Acknowledgments
 
-The project was inspired by . Extra features, logic, refactoring, and bug fixes was added in both client and server side.
-
-- Todo []()
+In Progress... Check back soon!
