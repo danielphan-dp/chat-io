@@ -1,7 +1,15 @@
 <p align='center'>
 	<img src="./images/network-svgrepo-com.svg" width="300px" />
-	<h1 align="center">Chat.io</h1>
 </p>
+
+<h3 align="center">
+	Chat.io
+</h3>
+
+<p align="center">
+	Connect with others in real-time!
+</p>
+
 
 ## About The Project
 
