@@ -1,6 +1,6 @@
 <p align='center'>
-<img src="./images/network-svgrepo-com.svg" width="300px" />
-<h1 align="center">Chat.io</h1>
+	<img src="./images/network-svgrepo-com.svg" width="300px" />
+	<h1 align="center">Chat.io</h1>
 </p>
 
 ## About The Project
@@ -26,8 +26,6 @@ A real-time full-stack web application that support many useful features includi
 - ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
 
 - ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-
-<!-- GETTING STARTED -->
 
 ## Getting Started
 
@@ -123,9 +121,9 @@ In progress... Check back soon!
   - [ ] In-browser Transpiler and Bundler (with Webpack or EsBuild)
     - [ ] Render React Code Cells
     - [ ] Execute JavaScript Functions
-  - [ ] Security:
+  - [ ] Security
     - [ ] For Running Code Cells
-      - [ ] Safely User Execute Code in Browser with Sand-boxing Techniques
+      - [ ] Safely Execute User Code in Browser with Sand-boxing Techniques
   - [ ] Machine Learning
     - [ ] Automatic Text Completion
     - [ ] Natural Language Processing Bots
