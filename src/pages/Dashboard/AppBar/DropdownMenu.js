@@ -18,7 +18,7 @@ const DropdownMenu = () => {
         onClose={() => setAnchorEl(null)}
         MenuListProps={{ 'aria-labelledby': 'basic-button' }}
       >
-        <MenuItem onClick={authService.logout()}>Logout</MenuItem>
+        <MenuItem onClick={authService.logout}>Logout</MenuItem>
       </Menu>
     </div>
   );

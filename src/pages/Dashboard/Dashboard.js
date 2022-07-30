@@ -25,6 +25,7 @@ const Dashboard = ({ setUserDetails }) => {
       setUserDetails(JSON.parse(userDetails));
       connectWithSocketServer(JSON.parse(userDetails));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <Wrapper>

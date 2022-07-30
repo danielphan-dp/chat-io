@@ -33,8 +33,8 @@ const InputWithLabels = ({ type, label, valueHook: { value, setValue }, placehol
       <InputLabel>{label}</InputLabel>
       <InputCell
         type={type}
-        value={value}
         placeholder={placeholder}
+        value={value}
         onChange={(e) => setValue(e.target.value)}
       />
     </InputWrapper>

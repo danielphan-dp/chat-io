@@ -12,19 +12,19 @@ const RegisterPageInputs = ({
         type="text"
         label="E-mail Address"
         placeholder="Enter e-mail address"
-        valueHook={{ mail, setMail }}
+        valueHook={{ value: mail, setValue: setMail }}
       />
       <InputWithLabels
         type="text"
         label="Username"
         placeholder="Enter username"
-        valueHook={{ username, setUsername }}
+        valueHook={{ value: username, setValue: setUsername }}
       />
       <InputWithLabels
         type="password"
         label="Password"
         placeholder="Enter password"
-        valueHook={{ password, setPassword }}
+        valueHook={{ value: password, setValue: setPassword }}
       />
     </>
   );

@@ -10,13 +10,13 @@ const LoginPageInputs = ({
       <InputsWithLabels
         type="text"
         label="E-mail"
-        valueHook={{ mail, setMail }}
+        valueHook={{ value: mail, setValue: setMail }}
         placeholder="Enter e-mail address"
       />
       <InputsWithLabels
         type="password"
         label="Password"
-        valueHook={{ password, setPassword }}
+        valueHook={{ value: password, setValue: setPassword }}
         placeholder="Enter password"
       />
     </>

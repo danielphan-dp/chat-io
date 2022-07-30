@@ -1,40 +1,38 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { styled } from '@mui/system';
 import FriendsListItem from './FriendsListItem';
 
-import { connect } from 'react-redux';
-
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   flexGrow: 1,
   width: '100%',
 });
 
 const checkOnlineUsers = (friends = [], onlineUsers = []) => {
-  friends.forEach((f) => {
-    f.isOnline = onlineUsers.find((user) => user.userId === f.id);
+  friends.forEach((friend) => {
+    friend.isOnline = onlineUsers.find((user) => user.userId === friend.id);
   });
   return friends;
 };
 
 const FriendsList = ({ friends, onlineUsers }) => {
   return (
-    <MainContainer>
-      {checkOnlineUsers(friends, onlineUsers).map((f) => (
-        <FriendsListItem
-          username={f.username}
-          id={f.id}
-          key={f.id}
-          isOnline={f.isOnline}
-        />
+    <Wrapper>
+      {checkOnlineUsers(friends, onlineUsers).map(({ id, username, isOnline }) => (
+        <FriendsListItem {...{ key: id, id, username, isOnline }} />
       ))}
-    </MainContainer>
+    </Wrapper>
   );
 };
 
-const mapStoreStateToProps = ({ friends }) => {
-  return {
-    ...friends,
-  };
+const mapStateToProps = ({ friends }) => {
+  return { ...friends };
 };
 
-export default connect(mapStoreStateToProps, null)(FriendsList);
+const mapDispatchToProps = null;
+
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FriendsList);
