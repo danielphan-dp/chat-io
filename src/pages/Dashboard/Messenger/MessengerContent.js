@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { styled } from '@mui/system';
-import Messages from './Messages/Messages';
-import NewMessageInput from './Messages/NewMessageInput';
 import { connect } from 'react-redux';
 import { getDirectChatHistory } from '../../../networking/realtime-communication/socketConnection';
+import Messages from './Messages/Messages';
+import NewMessageInput from './Messages/NewMessageInput';
 
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   flexGrow: 1,
 });
 
@@ -17,10 +17,10 @@ const MessengerContent = ({ chosenChatDetails }) => {
   }, [chosenChatDetails]);
 
   return (
-    <MainContainer>
+    <Wrapper>
       <Messages />
       <NewMessageInput />
-    </MainContainer>
+    </Wrapper>
   );
 };
 
@@ -30,9 +30,10 @@ const mapStoreStateToProps = ({ chat }) => {
   };
 };
 
-const mapActionsToProps = null;
+const mapDispatchToProps = null;
 
+// prettier-ignore
 export default connect(
   mapStoreStateToProps,
-  mapActionsToProps
+  mapDispatchToProps
 )(MessengerContent);

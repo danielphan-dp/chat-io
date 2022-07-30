@@ -1,9 +1,8 @@
 import React from 'react';
-
-import { Typography } from '@mui/material';
 import { styled } from '@mui/system';
+import { Typography } from '@mui/material';
 
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   flexGrow: 1,
   height: '100%',
   display: 'flex',
@@ -13,9 +12,9 @@ const MainContainer = styled('div')({
 
 const WelcomeMessage = () => {
   return (
-    <MainContainer variant="h6" sx={{ color: 'white' }}>
+    <Wrapper variant="h6" sx={{ color: 'white' }}>
       <Typography>Welcome! Thank you for using our services!</Typography>
-    </MainContainer>
+    </Wrapper>
   );
 };
 

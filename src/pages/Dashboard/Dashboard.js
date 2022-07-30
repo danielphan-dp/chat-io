@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connectWithSocketServer } from '../../networking/realtime-communication/socketConnection';
 import { logout } from '../../shared/utils/auth';
 import { connect } from 'react-redux';
-import { getActions } from '../../store/actions/authActions';
+import { getActions } from '../../store/actions/auth.actions';
 import { styled } from '@mui/system';
 import AppBar from './AppBar/AppBar';
 import SideBar from './SideBar/SideBar';

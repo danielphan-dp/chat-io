@@ -1,4 +1,4 @@
-import alertActions from '../actions/alertActions';
+import alertActions from '../actions/alert.actions';
 
 const initialState = {
   showAlertMessage: false,
@@ -21,9 +21,7 @@ const reducer = (state = initialState, action) => {
         alertMessageContent: null,
       };
     default:
-      return {
-        ...state,
-      };
+      return state;
   }
 };
 

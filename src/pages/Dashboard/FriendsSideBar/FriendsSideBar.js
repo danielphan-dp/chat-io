@@ -1,12 +1,11 @@
 import React from 'react';
 import { styled } from '@mui/system';
-
 import AddFriendButton from './AddFriendButton';
 import FriendsList from './FriendsList/FriendsList';
 import FriendsTitle from './FriendsTitle';
 import PendingInvitationsList from './PendingInvitationsList/PendingInvitationsList';
 
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   width: '224px',
   height: '100%',
   display: 'flex',
@@ -17,13 +16,13 @@ const MainContainer = styled('div')({
 
 const FriendsSideBar = () => {
   return (
-    <MainContainer>
+    <Wrapper>
       <AddFriendButton />
       <FriendsTitle title="Private Messages" />
       <FriendsList />
       <FriendsTitle title="Invitations" />
       <PendingInvitationsList />
-    </MainContainer>
+    </Wrapper>
   );
 };
 

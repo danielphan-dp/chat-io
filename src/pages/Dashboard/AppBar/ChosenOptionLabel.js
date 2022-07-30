@@ -1,8 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-
 import { connect } from 'react-redux';
-import getActions from '../../../store/actions/chatActions';
+import getActions from '../../../store/actions/chat.actions';
 
 const ChosenOptionLabel = ({ name }) => {
   return (
@@ -12,16 +11,20 @@ const ChosenOptionLabel = ({ name }) => {
   );
 };
 
-const mapStoreStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     name: state.chat.chosenChatDetails?.name,
   };
 };
 
-// const mapActionsToProps = (dispatch) => {
-//   return {
-//     ...getActions(dispatch),
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    ...getActions(dispatch),
+  };
+};
 
-export default connect(mapStoreStateToProps, null)(ChosenOptionLabel);
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ChosenOptionLabel);

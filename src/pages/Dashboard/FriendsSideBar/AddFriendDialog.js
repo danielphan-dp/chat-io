@@ -1,45 +1,32 @@
 import React, { useState, useEffect } from 'react';
-
+import { validateMail } from '../../../shared/utils/validators';
+import { connect } from 'react-redux';
+import { getActions } from '../../../store/actions/friends.actions';
+import Typography from '@mui/material/Typography';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-
-import Typography from '@mui/material/Typography';
-
-import { validateMail } from '../../../shared/utils/validators';
 import InputWithLabel from '../../../shared/components/InputWithLabels';
 import CustomPrimaryButton from '../../../shared/components/CustomPrimaryButton';
 
-import { connect } from 'react-redux';
-import getActions from '../../../store/actions/friendsActions';
-
-const AddFriendDialog = ({
-  isDialogOpen,
-  closeDialogHandler,
-  sendFriendInvitation = () => {},
-}) => {
+const AddFriendDialog = ({ isDialogOpen, closeDialogHandler, sendFriendInvitation = () => {} }) => {
   const [mail, setMail] = useState('');
   const [isFormValid, setIsFormValid] = useState('');
 
+  useEffect(() => {
+    setIsFormValid(validateMail(mail));
+  }, [mail, setIsFormValid]);
+
   const handleSendInvitation = () => {
-    sendFriendInvitation(
-      {
-        targetMailAddress: mail,
-      },
-      handleCloseDialog
-    );
+    sendFriendInvitation({ targetMailAddress: mail }, handleCloseDialog);
   };
 
   const handleCloseDialog = () => {
     closeDialogHandler();
     setMail('');
   };
-
-  useEffect(() => {
-    setIsFormValid(validateMail(mail));
-  }, [mail, setIsFormValid]);
 
   return (
     <div>
@@ -51,9 +38,7 @@ const AddFriendDialog = ({
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            <Typography>
-              Enter e-mail of the user you want to invite!
-            </Typography>
+            <Typography>Enter e-mail of the user you want to invite!</Typography>
           </DialogContentText>
           <InputWithLabel
             label="Mail"
@@ -80,10 +65,16 @@ const AddFriendDialog = ({
   );
 };
 
-const mapActionsToProps = (dispatch) => {
+const mapStateToProps = null;
+
+const mapDispatchToProps = (dispatch) => {
   return {
     ...getActions(dispatch),
   };
 };
 
-export default connect(null, mapActionsToProps)(AddFriendDialog);
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AddFriendDialog);

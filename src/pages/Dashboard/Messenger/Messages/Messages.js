@@ -1,11 +1,11 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { styled } from '@mui/system';
+import { connect } from 'react-redux';
 import MessagesHeader from './MessagesHeader';
 import Message from './Message';
-import { connect } from 'react-redux';
 import DateSeparator from './DateSeparator';
 
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   height: 'calc(100% - 60px)',
   overflow: 'auto',
   display: 'flex',
@@ -20,62 +20,52 @@ const convertDateToHumanReadable = (date, format) => {
     yy: date.getFullYear().toString().slice(-2),
     yyyy: date.getFullYear(),
   };
-
   return format.replace(/mm|dd|yy|yyy/gi, (matched) => map[matched]);
 };
 
 const Messages = ({ chosenChatDetails, chatMessages }) => {
   const messages = chatMessages;
-
   return (
-    <MainContainer>
+    <Wrapper>
       <MessagesHeader name={chosenChatDetails?.name} />
       {messages.map((message, index) => {
         const sameAuthor =
-          index > 0 &&
-          messages[index].author._id === messages[index - 1].author._id;
-
+          index > 0 && messages[index].author._id === messages[index - 1].author._id;
         const sameDay =
           index > 0 &&
           convertDateToHumanReadable(new Date(message.date), 'dd/mm/yy') ===
-            convertDateToHumanReadable(
-              new Date(messages[index - 1].date),
-              'dd/mm/yy'
-            );
-
+            convertDateToHumanReadable(new Date(messages[index - 1].date), 'dd/mm/yy');
         return (
           <div key={message._id} style={{ width: '97%' }}>
             {(!sameDay || index === 0) && (
               <DateSeparator
-                date={convertDateToHumanReadable(
-                  new Date(message.date),
-                  'dd/mm/yy'
-                )}
+                date={convertDateToHumanReadable(new Date(message.date), 'dd/mm/yy')}
               />
             )}
             <Message
               content={message.content}
               username={message.author.username}
               sameAuthor={sameAuthor}
-              date={convertDateToHumanReadable(
-                new Date(message.date),
-                'dd/mm/yy'
-              )}
+              date={convertDateToHumanReadable(new Date(message.date), 'dd/mm/yy')}
               sameDay={sameDay}
             />
           </div>
         );
       })}
-    </MainContainer>
+    </Wrapper>
   );
 };
 
-const mapStoreStateToProps = ({ chat }) => {
+const mapStateToProps = ({ chat }) => {
   return {
     ...chat,
   };
 };
 
-const mapActionsToProps = {};
+const mapDispatchToProps = null;
 
-export default connect(mapStoreStateToProps, mapStoreStateToProps)(Messages);
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Messages);

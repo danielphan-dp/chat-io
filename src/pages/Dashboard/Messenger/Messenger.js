@@ -1,14 +1,10 @@
 import React from 'react';
-
 import { styled } from '@mui/system';
-
+import { connect } from 'react-redux';
 import WelcomeMessage from './WelcomeMessage';
 import MessengerContent from './MessengerContent';
 
-import { connect } from 'react-redux';
-// import getActions from '../../../store/actions/chatActions';
-
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   flexGrow: 1,
   backgroundColor: '#36393f',
   marginTop: '48px',
@@ -17,26 +13,26 @@ const MainContainer = styled('div')({
 
 const Messenger = ({ chatType, chosenChatDetails, chatMessages }) => {
   return (
-    <MainContainer>
+    <Wrapper>
       {!chosenChatDetails ? (
         <WelcomeMessage />
       ) : (
         <MessengerContent chosenChatDetails={chosenChatDetails} />
       )}
-    </MainContainer>
+    </Wrapper>
   );
 };
 
-const mapStoreStateToProps = (state) => {
+const mapStateToProps = (state) => {
   return {
     ...state.chat,
   };
 };
 
-// const mapActionsToProps = (dispatch) => {
-//   return {
-//     ...getActions(dispatch),
-//   };
-// };
+const mapDispatchToProps = null;
 
-export default connect(mapStoreStateToProps, null)(Messenger);
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Messenger);

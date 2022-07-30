@@ -27,7 +27,7 @@ const InputCell = styled('input')({
   padding: '0 5px',
 });
 
-const InputWithLabels = ({ type, label, value, setValue, placeholder }) => {
+const InputWithLabels = ({ type, label, valueHook: { value, setValue }, placeholder }) => {
   return (
     <InputWrapper>
       <InputLabel>{label}</InputLabel>

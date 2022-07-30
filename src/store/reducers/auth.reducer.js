@@ -1,4 +1,4 @@
-import authActions from '../actions/authActions';
+import AuthActions from '../actions.types/auth.actions.types';
 
 const initialState = {
   userDetails: null,
@@ -7,16 +7,14 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case authActions.SET_USER_DETAILS:
+    case AuthActions.SET_USER_DETAILS:
       const { userDetails } = payload;
       return {
         ...state,
         userDetails: userDetails,
       };
     default:
-      return {
-        ...state,
-      };
+      return state;
   }
 };
 

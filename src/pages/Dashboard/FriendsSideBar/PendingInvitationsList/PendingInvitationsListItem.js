@@ -4,7 +4,7 @@ import Avatar from '../../../../shared/components/Avatar';
 import InvitationDecisionButtons from './InvitationDecisionButtons';
 
 import { connect } from 'react-redux';
-import { getActions } from '../../../../store/actions/friendsActions';
+import { getActions } from '../../../../store/actions/friends.actions';
 
 const PendingInvitationsListItem = ({
   id,

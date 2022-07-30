@@ -3,7 +3,7 @@ import { styled } from '@mui/system';
 import { connect } from 'react-redux';
 import { sendDirectMessage } from '../../../../networking/realtime-communication/socketConnection';
 
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   height: '60px',
   width: '100%',
   display: 'flex',
@@ -24,17 +24,14 @@ const Input = styled('input')({
 
 const NewMessageInput = ({ chosenChatDetails }) => {
   const [message, setMessage] = useState('');
-
   const handleMessageValueChange = (event) => {
     setMessage(event.target.value);
   };
-
   const handleKeyPressed = (event) => {
     if (event.key === 'Enter') {
       handleSendMessage();
     }
   };
-
   const handleSendMessage = () => {
     if (message.length > 0) {
       sendDirectMessage({
@@ -44,16 +41,15 @@ const NewMessageInput = ({ chosenChatDetails }) => {
       setMessage('');
     }
   };
-
   return (
-    <MainContainer>
+    <Wrapper>
       <Input
-        placeholder={`Write message to ${chosenChatDetails.name}`}
         value={message}
+        placeholder={`Write message to ${chosenChatDetails.name}`}
         onChange={handleMessageValueChange}
         onKeyDown={handleKeyPressed}
       />
-    </MainContainer>
+    </Wrapper>
   );
 };
 
@@ -65,6 +61,7 @@ const mapStoreStateToProps = ({ chat }) => {
 
 const mapActionsToProps = null;
 
+// prettier-ignore
 export default connect(
   mapStoreStateToProps,
   mapActionsToProps

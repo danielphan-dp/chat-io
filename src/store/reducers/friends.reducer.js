@@ -1,4 +1,4 @@
-import { friendsActions } from '../actions/friendsActions';
+import { friendsActions } from '../actions/friends.actions';
 
 const initialState = {
   friends: [],
@@ -26,9 +26,7 @@ const reducer = (state = initialState, action) => {
         onlineUsers: payload.onlineUsers,
       };
     default:
-      return {
-        ...state,
-      };
+      return state;
   }
 };
 

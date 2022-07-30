@@ -1,13 +1,10 @@
 import React from 'react';
-
 import { styled } from '@mui/system';
-
-import Avatar from '../../../../shared/components/Avatar';
 import { Typography } from '@mui/material';
-
 import { connect } from 'react-redux';
+import Avatar from '../../../../shared/components/Avatar';
 
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   width: '98%',
   display: 'column',
   marginTop: '10px',
@@ -15,7 +12,7 @@ const MainContainer = styled('div')({
 
 const MessagesHeader = ({ name = '' }) => {
   return (
-    <MainContainer>
+    <Wrapper>
       <Avatar large username={name} />
       <Typography
         variant="h4"
@@ -37,11 +34,16 @@ const MessagesHeader = ({ name = '' }) => {
       >
         This is the beginning of your conversation with {name}.
       </Typography>
-    </MainContainer>
+    </Wrapper>
   );
 };
 
 const mapStoreStateToProps = null;
+
 const mapActionsToProps = null;
 
-export default connect(mapStoreStateToProps, mapActionsToProps)(MessagesHeader);
+// prettier-ignore
+export default connect(
+  mapStoreStateToProps,
+  mapActionsToProps
+)(MessagesHeader);

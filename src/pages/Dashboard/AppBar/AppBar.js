@@ -3,7 +3,7 @@ import { styled } from '@mui/system';
 import DropdownMenu from './DropdownMenu';
 import ChosenOptionLabel from './ChosenOptionLabel';
 
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   position: 'absolute',
   right: '0',
   top: '0',
@@ -19,10 +19,10 @@ const MainContainer = styled('div')({
 
 const AppBar = () => {
   return (
-    <MainContainer>
+    <Wrapper>
       <ChosenOptionLabel />
       <DropdownMenu />
-    </MainContainer>
+    </Wrapper>
   );
 };
 

@@ -1,18 +1,12 @@
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-// -------------------------------------
-// | Import Function-specific Reducers |
-// -------------------------------------
-import authReducer from './reducers/authReducer';
-import alertReducer from './reducers/alertReducer';
-import friendsReducer from './reducers/friendsReducer';
-import chatReducer from './reducers/chatReducer';
+import authReducer from './reducers/auth.reducer';
+import alertReducer from './reducers/alert.reducer';
+import friendsReducer from './reducers/friends.reducer';
+import chatReducer from './reducers/chat.reducer';
 
-// ---------------------------
-// | Create the Core Reducer |
-// ---------------------------
 const rootReducer = combineReducers({
   auth: authReducer,
   alert: alertReducer,
@@ -20,12 +14,6 @@ const rootReducer = combineReducers({
   chat: chatReducer,
 });
 
-// --------------------------------------
-// | Create the Application State Store |
-// --------------------------------------
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-);
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;

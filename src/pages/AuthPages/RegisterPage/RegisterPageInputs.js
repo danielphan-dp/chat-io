@@ -1,29 +1,30 @@
 import React from 'react';
 import InputWithLabels from '../../../shared/components/InputWithLabels';
 
-const RegisterPageInputs = ({ mail, setMail, username, setUsername, password, setPassword }) => {
+const RegisterPageInputs = ({
+  mailHook: { mail, setMail },
+  usernameHook: { username, setUsername },
+  passwordHook: { password, setPassword },
+}) => {
   return (
     <>
       <InputWithLabels
-        value={mail}
-        setValue={setMail}
+        type="text"
         label="E-mail Address"
-        type="text"
         placeholder="Enter e-mail address"
+        valueHook={{ mail, setMail }}
       />
       <InputWithLabels
-        value={username}
-        setValue={setUsername}
-        label="Username"
         type="text"
+        label="Username"
         placeholder="Enter username"
+        valueHook={{ username, setUsername }}
       />
       <InputWithLabels
-        value={password}
-        setValue={setPassword}
-        label="Password"
         type="password"
+        label="Password"
         placeholder="Enter password"
+        valueHook={{ password, setPassword }}
       />
     </>
   );

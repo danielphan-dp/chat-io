@@ -1,4 +1,4 @@
-import { setMessages } from '../../store/actions/chatActions';
+import { setMessages } from '../../store/actions/chat.actions';
 import store from '../../store/store';
 
 export const updateDirectChatHistoryIfActive = (data) => {

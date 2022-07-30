@@ -1,6 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import { styled } from '@mui/material';
+import { styled, Typography } from '@mui/material';
 
 const RedirectText = styled('span')({
   color: '#00AFF4',
@@ -8,12 +7,7 @@ const RedirectText = styled('span')({
   cursor: 'pointer',
 });
 
-const RedirectInfo = ({
-  text,
-  redirectText,
-  additionalStyles,
-  redirectHandler,
-}) => {
+const RedirectInfo = ({ text, redirectText, redirectHandler, additionalStyles }) => {
   return (
     <Typography
       sx={{ color: '#72767d' }}

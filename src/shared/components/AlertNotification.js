@@ -2,13 +2,9 @@ import React from 'react';
 import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import { connect } from 'react-redux';
-import { getActions } from '../../store/actions/alertActions';
+import { getActions } from '../../store/actions/alert.actions';
 
-const AlertNotification = ({
-  showAlertMessage,
-  closeAlertMessage,
-  alertMessageContent,
-}) => {
+const AlertNotification = ({ showAlertMessage, closeAlertMessage, alertMessageContent }) => {
   return (
     <Snackbar
       anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
@@ -21,20 +17,20 @@ const AlertNotification = ({
   );
 };
 
-const mapStoreStateToProps = (state) => {
-  const { alert } = state;
+const mapStoreStateToProps = ({ alert }) => {
   return {
     ...alert,
   };
 };
 
-const mapActionsToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     ...getActions(dispatch),
   };
 };
 
+// prettier-ignore
 export default connect(
   mapStoreStateToProps,
-  mapActionsToProps
+  mapDispatchToProps
 )(AlertNotification);

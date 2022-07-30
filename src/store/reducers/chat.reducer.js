@@ -1,4 +1,4 @@
-import { chatActions } from '../actions/chatActions';
+import { ChatActions } from '../actions/chat.actions';
 
 const initialState = {
   chatType: null,
@@ -10,22 +10,20 @@ const reducer = (state = initialState, action) => {
   const { type, payload } = action;
   const { chatType, chosenChatDetails, chatMessages } = payload || {};
   switch (type) {
-    case chatActions.SET_CHOSEN_CHAT_DETAILS:
+    case ChatActions.SET_CHOSEN_CHAT_DETAILS:
       return {
         ...state,
         chatType: chatType,
         chosenChatDetails: chosenChatDetails,
         chatMessages: [],
       };
-    case chatActions.SET_MESSAGES:
+    case ChatActions.SET_MESSAGES:
       return {
         ...state,
         chatMessages,
       };
     default:
-      return {
-        ...state,
-      };
+      return state;
   }
 };
 

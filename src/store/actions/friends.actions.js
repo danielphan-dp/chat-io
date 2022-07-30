@@ -1,21 +1,10 @@
+import { FriendsActions } from '../actions.types/friend.actions.types';
 import * as authApi from '../../networking/api/authApi';
-import { openAlertMessage } from './alertActions';
+import { openAlertMessage } from './alert.actions';
 
-// -----------------------------------
-// | Enumerate of All Friend Actions |
-// -----------------------------------
-export const friendsActions = {
-  SET_FRIENDS: 'FRIENDS.SET_FRIENDS',
-  SET_PENDING_FRIENDS_INVITATIONS: 'FRIENDS.SET_PENDING_FRIENDS_INVITATIONS',
-  SET_ONLINE_USERS: 'FRIENDS.SET_ONLINE_USERS',
-};
-
-// ----------------------
-// | Store State Access |
-// ----------------------
 export const setFriends = (friends) => {
   return {
-    type: friendsActions.SET_FRIENDS,
+    type: FriendsActions.SET_FRIENDS,
     payload: {
       friends,
     },
@@ -24,7 +13,7 @@ export const setFriends = (friends) => {
 
 export const setPendingFriendsInvitations = (pendingFriendsInvitations) => {
   return {
-    type: friendsActions.SET_PENDING_FRIENDS_INVITATIONS,
+    type: FriendsActions.SET_PENDING_FRIENDS_INVITATIONS,
     payload: {
       pendingFriendsInvitations,
     },
@@ -33,16 +22,13 @@ export const setPendingFriendsInvitations = (pendingFriendsInvitations) => {
 
 export const setOnlineUsers = (onlineUsers) => {
   return {
-    type: friendsActions.SET_ONLINE_USERS,
+    type: FriendsActions.SET_ONLINE_USERS,
     payload: {
       onlineUsers,
     },
   };
 };
 
-// ----------------------
-// | Actions Generators |
-// ----------------------
 export const sendFriendInvitation = (data, closeDialogHandler) => {
   return async (dispatch) => {
     const response = await authApi.sendFriendInvitation(data);
@@ -77,24 +63,14 @@ export const rejectFriendInvitation = ({ requestData }) => {
   };
 };
 
-// -------------------
-// | Package Actions |
-// -------------------
+// prettier-ignore
 export const getActions = (dispatch) => {
   return {
-    // store access and modify
     setFriends: (data) => dispatch(setFriends({ requestData: data })),
     // TODO: setPendingFriendsInvitations
     // TODO: setOnlineUsers
-
-    // actions generators
-    sendFriendInvitation: (data, closeDialogHandler) =>
-      dispatch(sendFriendInvitation(data, closeDialogHandler)),
-    acceptFriendInvitation: (data) =>
-      dispatch(acceptFriendInvitation({ requestData: data })),
-    rejectFriendInvitation: (data) =>
-      dispatch(rejectFriendInvitation({ requestData: data })),
+    sendFriendInvitation: (data, closeDialogHandler) => dispatch(sendFriendInvitation(data, closeDialogHandler)),
+    acceptFriendInvitation: (data) => dispatch(acceptFriendInvitation({ requestData: data })),
+    rejectFriendInvitation: (data) => dispatch(rejectFriendInvitation({ requestData: data })),
   };
 };
-
-export default getActions;

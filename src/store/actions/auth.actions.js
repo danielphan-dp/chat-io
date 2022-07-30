@@ -1,13 +1,10 @@
+import { AuthActions } from '../actions.types/auth.actions.types';
 import * as authApi from '../../networking/api/authApi';
-import { openAlertMessage } from './alertActions';
-
-const authActions = {
-  SET_USER_DETAILS: 'AUTH.SET_USER_DETAILS',
-};
+import { openAlertMessage } from './alert.actions';
 
 const setUserDetails = (userDetails) => {
   return {
-    type: authActions.SET_USER_DETAILS,
+    type: AuthActions.SET_USER_DETAILS,
     payload: {
       userDetails,
     },
@@ -17,13 +14,9 @@ const setUserDetails = (userDetails) => {
 const login = (userDetails, navigate) => {
   return async (dispatch) => {
     const response = await authApi.login(userDetails);
-
-    // LOG: remove log when finished testing
-    // console.log(response);
-
     if (response.error) {
-      // show error message in alert
-      dispatch(openAlertMessage(response?.exception?.response?.data));
+      const alertMessage = response?.exception?.response?.data;
+      dispatch(openAlertMessage(alertMessage));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem('user', JSON.stringify(userDetails));
@@ -36,13 +29,9 @@ const login = (userDetails, navigate) => {
 const register = (userDetails, navigate) => {
   return async (dispatch) => {
     const response = await authApi.register(userDetails);
-
-    // LOG: remove log when finished testing
-    // console.log(response);
-
     if (response.error) {
-      // show error message in alert
-      dispatch(openAlertMessage(response?.exception?.response?.data));
+      const alertMessage = response?.exception?.response?.data;
+      dispatch(openAlertMessage(alertMessage));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem('user', JSON.stringify(userDetails));
@@ -52,15 +41,11 @@ const register = (userDetails, navigate) => {
   };
 };
 
+// prettier-ignore
 export const getActions = (dispatch) => {
   return {
+    setUserDetails: (userDetails) => dispatch(setUserDetails(userDetails)),
     login: (userDetails, navigate) => dispatch(login(userDetails, navigate)),
-    register: (userDetails, navigate) =>
-      dispatch(register(userDetails, navigate)),
-    setUserDetails: (userDetails) => {
-      dispatch(setUserDetails(userDetails));
-    },
+    register: (userDetails, navigate) => dispatch(register(userDetails, navigate)),
   };
 };
-
-export default authActions;

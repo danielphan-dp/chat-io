@@ -10,7 +10,7 @@ import {
   setFriends,
   setPendingFriendsInvitations,
   setOnlineUsers,
-} from '../../store/actions/friendsActions';
+} from '../../store/actions/friends.actions';
 
 // Helper functions
 import { updateDirectChatHistoryIfActive } from '../../shared/utils/chat';
