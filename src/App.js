@@ -1,16 +1,14 @@
 import React from 'react';
+import './App.css';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-
 import LoginPage from './pages/AuthPages/LoginPage/LoginPage';
 import RegisterPage from './pages/AuthPages/RegisterPage/RegisterPage';
 import Dashboard from './pages/Dashboard/Dashboard';
-
-import './App.css';
 import AlertNotification from './shared/components/AlertNotification';
 
 const App = () => {
   return (
-    <React.Fragment>
+    <>
       <BrowserRouter>
         <Routes>
           <Route exact path="/login" element={<LoginPage />} />
@@ -20,7 +18,7 @@ const App = () => {
         </Routes>
       </BrowserRouter>
       <AlertNotification />
-    </React.Fragment>
+    </>
   );
 };
 

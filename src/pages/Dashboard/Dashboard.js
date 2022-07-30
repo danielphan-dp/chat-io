@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
+import { connectWithSocketServer } from '../../networking/realtime-communication/socketConnection';
+import { logout } from '../../shared/utils/auth';
+import { connect } from 'react-redux';
+import { getActions } from '../../store/actions/authActions';
 import { styled } from '@mui/system';
-
+import AppBar from './AppBar/AppBar';
 import SideBar from './SideBar/SideBar';
 import FriendsSideBar from './FriendsSideBar/FriendsSideBar';
 import Messenger from './Messenger/Messenger';
-import AppBar from './AppBar/AppBar';
-import { logout } from '../../shared/utils/auth';
 
-import { connect } from 'react-redux';
-import { getActions } from '../../store/actions/authActions';
-import { connectWithSocketServer } from '../../networking/realtime-communication/socketConnection';
-
-const Wrapper = styled('div')({
+const DashboardWrapper = styled('div')({
   width: '100%',
   height: '100vh',
   display: 'flex',
@@ -19,9 +17,6 @@ const Wrapper = styled('div')({
 
 const Dashboard = ({ setUserDetails }) => {
   useEffect(() => {
-    // TODO: remove when finished testing
-    // Important: useEffect will be called twice when strict mode is on
-
     const userDetails = localStorage.getItem('user');
     if (!userDetails) {
       logout();
@@ -30,21 +25,26 @@ const Dashboard = ({ setUserDetails }) => {
       connectWithSocketServer(JSON.parse(userDetails));
     }
   }, []);
-
   return (
-    <Wrapper>
+    <DashboardWrapper>
       <SideBar />
       <FriendsSideBar />
       <Messenger />
       <AppBar />
-    </Wrapper>
+    </DashboardWrapper>
   );
 };
 
-const mapActionsToProps = (dispatch) => {
+const mapStateToProps = null;
+
+const mapDispatchToProps = (dispatch) => {
   return {
     ...getActions(dispatch),
   };
 };
 
-export default connect(null, mapActionsToProps)(Dashboard);
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Dashboard);

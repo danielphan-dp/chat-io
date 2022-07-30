@@ -1,14 +1,13 @@
 import React from 'react';
 import InputWithLabels from '../../../shared/components/InputWithLabels';
 
-const RegisterPageInputs = (props) => {
-  const { mail, setMail, username, setUsername, password, setPassword } = props;
+const RegisterPageInputs = ({ mail, setMail, username, setUsername, password, setPassword }) => {
   return (
-    <React.Fragment>
+    <>
       <InputWithLabels
         value={mail}
         setValue={setMail}
-        label="E-mail address"
+        label="E-mail Address"
         type="text"
         placeholder="Enter e-mail address"
       />
@@ -26,7 +25,7 @@ const RegisterPageInputs = (props) => {
         type="password"
         placeholder="Enter password"
       />
-    </React.Fragment>
+    </>
   );
 };
 

@@ -1,21 +1,21 @@
 import React from 'react';
 import { styled } from '@mui/system';
 
-const Wrapper = styled('div')({
+const InputWrapper = styled('div')({
   display: 'flex',
   justifyContent: 'center',
   flexDirection: 'column',
   width: '100%',
 });
 
-const Label = styled('p')({
+const InputLabel = styled('p')({
   color: '#b9bbbe',
   textTransform: 'uppercase',
   fontWeight: '600',
   fontSize: '16px',
 });
 
-const Input = styled('input')({
+const InputCell = styled('input')({
   flexGrow: 1,
   height: '40px',
   border: '1px solid black',
@@ -27,23 +27,17 @@ const Input = styled('input')({
   padding: '0 5px',
 });
 
-const InputWithLabels = (props) => {
-  const { value, setValue, label, type, placeholder } = props;
-
-  const handleValueChange = (event) => {
-    setValue(event.target.value);
-  };
-
+const InputWithLabels = ({ type, label, value, setValue, placeholder }) => {
   return (
-    <Wrapper>
-      <Label>{label}</Label>
-      <Input
-        value={value}
-        onChange={handleValueChange}
+    <InputWrapper>
+      <InputLabel>{label}</InputLabel>
+      <InputCell
         type={type}
+        value={value}
         placeholder={placeholder}
+        onChange={(e) => setValue(e.target.value)}
       />
-    </Wrapper>
+    </InputWrapper>
   );
 };
 

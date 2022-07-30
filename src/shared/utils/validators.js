@@ -1,29 +1,20 @@
 export const validateMail = (mail) => {
-  const emailRegexPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  return emailRegexPattern.test(mail);
+  // prettier-ignore
+  return (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/).test(mail);
 };
 
 export const validatePassword = (password) => {
-  const l = password.length;
-  // TODO: perform extra checks if needed
-  return 6 < l && l < 12;
+  return 6 <= password.length && password.length <= 32;
 };
 
 export const validateUsername = (username) => {
-  const l = username.length;
-  // TODO: perform extra checks if needed
-  return 2 < l && l < 13;
+  return 3 <= username.length && username.length <= 12;
 };
 
-export const validateRegisterForm = ({ mail, password, username }) => {
-  const isMailValid = validateMail(mail);
-  const isPasswordValid = validatePassword(password);
-  const isUsernameValid = validateUsername(username);
-  return isMailValid && isPasswordValid && isUsernameValid;
+export const validateRegisterForm = (mail, password, username) => {
+  return validateMail(mail) && validatePassword(password) && validateUsername(username);
 };
 
 export const validateLoginForm = ({ mail, password }) => {
-  const isMailValid = validateMail(mail);
-  const isPasswordValid = validatePassword(password);
-  return isMailValid && isPasswordValid;
+  return validateMail(mail) && validatePassword(password);
 };

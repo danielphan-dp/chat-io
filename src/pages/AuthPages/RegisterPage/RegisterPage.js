@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import AuthBox from '../../../shared/components/AuthBox';
-import { Typography } from '@mui/material';
-import RegisterPageInputs from './RegisterPageInputs';
-import RegisterPageFooter from './RegisterPageFooter';
-import { validateRegisterForm } from '../../../shared/utils/validators';
-
+import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getActions } from '../../../store/actions/authActions';
-
-import { useNavigate } from 'react-router-dom';
+import { Typography } from '@mui/material';
+import { validateRegisterForm } from '../../../shared/utils/validators';
+import AuthBox from '../../../shared/components/AuthBox';
+import RegisterPageInputs from './RegisterPageInputs';
+import RegisterPageFooter from './RegisterPageFooter';
 
 const RegisterPage = ({ register }) => {
   let navigate = useNavigate();
@@ -17,29 +15,18 @@ const RegisterPage = ({ register }) => {
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
 
-  const handleRegister = () => {
-    const userDetails = {
-      mail,
-      password,
-      username,
-    };
-    register(userDetails, navigate);
-  };
-
   useEffect(() => {
-    setIsFormValid(
-      validateRegisterForm({
-        mail,
-        username,
-        password,
-      })
-    );
-  }, [mail, username, password, setIsFormValid]);
+    setIsFormValid(validateRegisterForm(mail, password, username));
+  }, [mail, password, username, setIsFormValid]);
+
+  const handleRegister = () => {
+    register({ mail, password, username }, navigate);
+  };
 
   return (
     <AuthBox>
       <Typography variant="h5" sx={{ color: 'white' }}>
-        Create an account
+        Register an account
       </Typography>
       <RegisterPageInputs
         mail={mail}
@@ -49,18 +36,21 @@ const RegisterPage = ({ register }) => {
         password={password}
         setPassword={setPassword}
       />
-      <RegisterPageFooter
-        handleRegister={handleRegister}
-        isFormValid={isFormValid}
-      />
+      <RegisterPageFooter handleRegister={handleRegister} isFormValid={isFormValid} />
     </AuthBox>
   );
 };
 
-const mapActionsToProps = (dispatch) => {
+const mapStateToProps = null;
+
+const mapDispatchToProps = (dispatch) => {
   return {
     ...getActions(dispatch),
   };
 };
 
-export default connect(null, mapActionsToProps)(RegisterPage);
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RegisterPage);
