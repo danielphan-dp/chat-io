@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { validateMail } from '../../../shared/utils/validators';
+import { validateMail } from '../../../services/validate.service';
 import { connect } from 'react-redux';
 import { getActions } from '../../../store/actions/friends.actions';
 import Typography from '@mui/material/Typography';
@@ -8,8 +8,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import InputWithLabel from '../../../shared/components/InputWithLabels';
-import CustomPrimaryButton from '../../../shared/components/CustomPrimaryButton';
+import InputWithLabel from '../../../components/InputWithLabels';
+import CustomPrimaryButton from '../../../components/CustomPrimaryButton';
 
 const AddFriendDialog = ({ isDialogOpen, closeDialogHandler, sendFriendInvitation = () => {} }) => {
   const [mail, setMail] = useState('');

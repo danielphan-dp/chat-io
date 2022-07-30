@@ -1,5 +1,5 @@
 import React from 'react';
-import InputWithLabels from '../../../shared/components/InputWithLabels';
+import InputWithLabels from '../../../components/InputWithLabels';
 
 const RegisterPageInputs = ({
   mailHook: { mail, setMail },

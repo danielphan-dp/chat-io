@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getActions } from '../../../store/actions/auth.actions';
-import { validateLoginForm } from '../../../shared/utils/validators';
+import { validateLoginForm } from '../../../services/validate.service';
 
-import AuthBox from '../../../shared/components/AuthBox';
+import AuthBox from '../../../components/AuthBox';
 import LoginPageHeader from './LoginPageHeader';
 import LoginPageInputs from './LoginPageInputs';
 import LoginPageFooter from './LoginPageFooter';
@@ -16,7 +16,7 @@ const LoginPage = ({ login }) => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    setIsFormValid(validateLoginForm({ mail, password }));
+    setIsFormValid(validateLoginForm(mail, password));
   }, [mail, password, setIsFormValid]);
 
   // prettier-ignore

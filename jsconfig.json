@@ -5,5 +5,5 @@
       "$libs": ["src/libs"],
       "$libs/*": ["src/libs/*"]
     }
-  },
+  }
 }

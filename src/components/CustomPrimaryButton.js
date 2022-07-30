@@ -1,14 +1,10 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-const CustomPrimaryButton = ({
-  label,
-  additionalStyles,
-  disabled,
-  onClick,
-}) => {
+const CustomPrimaryButton = ({ additionalStyles, label, disabled, onClick }) => {
   return (
     <Button
+      style={additionalStyles ? additionalStyles : {}}
       variant="contained"
       sx={{
         bgcolor: '#5865F2',
@@ -19,7 +15,6 @@ const CustomPrimaryButton = ({
         width: '100%',
         height: '40px',
       }}
-      style={additionalStyles ? additionalStyles : {}}
       disabled={disabled}
       onClick={onClick}
     >

@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/AuthPages/LoginPage/LoginPage';
 import RegisterPage from './pages/AuthPages/RegisterPage/RegisterPage';
 import Dashboard from './pages/Dashboard/Dashboard';
-import AlertNotification from './shared/components/AlertNotification';
+import AlertNotification from './components/AlertNotification';
 
 const App = () => {
   return (

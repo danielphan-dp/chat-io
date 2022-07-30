@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import { Typography } from '@mui/material';
-import Avatar from '../../../../shared/components/Avatar';
+import Avatar from '../../../../components/Avatar';
 
 const Wrapper = styled('div')({ width: '97%', display: 'flex', marginTop: '10px' });
 const MessageWrapper = styled('div')({ display: 'flex', flexDirection: 'column' });

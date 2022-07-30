@@ -1,9 +1,9 @@
 import React from 'react';
 import { styled } from '@mui/system';
-import PendingInvitationsListItem from './PendingInvitationsListItem';
 import { connect } from 'react-redux';
+import PendingInvitationsListItem from './PendingInvitationsListItem';
 
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   width: '100%',
   height: '22%',
   display: 'flex',
@@ -14,23 +14,24 @@ const MainContainer = styled('div')({
 
 const PendingInvitationsList = ({ pendingFriendsInvitations }) => {
   return (
-    <MainContainer>
-      {pendingFriendsInvitations.map((invitation) => (
-        <PendingInvitationsListItem
-          key={invitation._id}
-          id={invitation._id}
-          username={invitation.senderId.username}
-          mail={invitation.senderId.mail}
-        />
+    <Wrapper>
+      {pendingFriendsInvitations.map(({ _id, senderId: { username, mail } }) => (
+        <PendingInvitationsListItem key={_id} id={_id} username={username} mail={mail} />
       ))}
-    </MainContainer>
+    </Wrapper>
   );
 };
 
-const mapStoreStateToProps = ({ friends }) => {
+const mapStateToProps = ({ friends }) => {
   return {
     ...friends,
   };
 };
 
-export default connect(mapStoreStateToProps)(PendingInvitationsList);
+const mapDispatchToProps = null;
+
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PendingInvitationsList);

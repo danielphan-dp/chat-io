@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from '@mui/material';
 import { connect } from 'react-redux';
-import getActions from '../../../store/actions/chat.actions';
+import { getActions } from '../../../store/actions/chat.actions';
 
 const ChosenOptionLabel = ({ name }) => {
   return (

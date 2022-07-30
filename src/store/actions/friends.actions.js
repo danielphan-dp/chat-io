@@ -1,4 +1,4 @@
-import { FriendsActions } from '../actions.types/friend.actions.types';
+import { FriendsActions } from '../actions.types/friends.actions.types';
 import * as authApi from '../../networking/api/authApi';
 import { openAlertMessage } from './alert.actions';
 

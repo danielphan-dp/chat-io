@@ -1,8 +1,8 @@
 import React from 'react';
-import Box from '@mui/material/Box';
 import { styled } from '@mui/system';
+import Box from '@mui/material/Box';
 
-const BoxWrapper = styled('div')({
+const Wrapper = styled('div')({
   width: '100%',
   height: '100vh',
   display: 'flex',
@@ -11,9 +11,9 @@ const BoxWrapper = styled('div')({
   background: '#5865F2',
 });
 
-const AuthBox = (props) => {
+const AuthBox = ({ children }) => {
   return (
-    <BoxWrapper>
+    <Wrapper>
       <Box
         sx={{
           width: 700,
@@ -26,9 +26,9 @@ const AuthBox = (props) => {
           padding: '25px',
         }}
       >
-        {props.children}
+        {children}
       </Box>
-    </BoxWrapper>
+    </Wrapper>
   );
 };
 

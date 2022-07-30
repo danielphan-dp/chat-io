@@ -1,5 +1,5 @@
 import React from 'react';
-import InputsWithLabels from '../../../shared/components/InputWithLabels';
+import InputsWithLabels from '../../../components/InputWithLabels';
 
 const LoginPageInputs = ({
   mailHook: { mail, setMail },

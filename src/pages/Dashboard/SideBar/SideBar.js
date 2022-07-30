@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@mui/system';
 import MainPageButton from './MainPageButton';
 
-const MainContainer = styled('div')({
+const Wrapper = styled('div')({
   width: '72px',
   height: '100%',
   display: 'flex',
@@ -13,9 +13,9 @@ const MainContainer = styled('div')({
 
 const SideBar = () => {
   return (
-    <MainContainer>
+    <Wrapper>
       <MainPageButton />
-    </MainContainer>
+    </Wrapper>
   );
 };
 

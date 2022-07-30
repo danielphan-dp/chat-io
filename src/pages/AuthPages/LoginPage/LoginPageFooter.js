@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
-import RedirectInfo from '../../../shared/components/RedirectInfo';
-import CustomPrimaryButton from '../../../shared/components/CustomPrimaryButton';
+import RedirectInfo from '../../../components/RedirectInfo';
+import CustomPrimaryButton from '../../../components/CustomPrimaryButton';
 
 const LoginPageFooter = ({ handleLogin, isFormValid }) => {
   const navigate = useNavigate();

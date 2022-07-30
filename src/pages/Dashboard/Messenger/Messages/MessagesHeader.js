@@ -2,7 +2,7 @@ import React from 'react';
 import { styled } from '@mui/system';
 import { Typography } from '@mui/material';
 import { connect } from 'react-redux';
-import Avatar from '../../../../shared/components/Avatar';
+import Avatar from '../../../../components/Avatar';
 
 const Wrapper = styled('div')({
   width: '98%',

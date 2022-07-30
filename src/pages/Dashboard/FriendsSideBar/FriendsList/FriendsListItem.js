@@ -2,8 +2,9 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { connect } from 'react-redux';
-import { ChatTypes, getActions } from '../../../../store/actions/chat.actions';
-import Avatar from '../../../../shared/components/Avatar';
+import { getActions } from '../../../../store/actions/chat.actions';
+import { ChatTypes } from '../../../../store/actions.types/chat.actions.types';
+import Avatar from '../../../../components/Avatar';
 import OnlineIndicator from './OnlineIndicator';
 
 const FriendsListItem = ({ id, username, isOnline, setChosenChatDetails }) => {

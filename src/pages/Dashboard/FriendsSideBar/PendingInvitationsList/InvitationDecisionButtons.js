@@ -1,32 +1,19 @@
 import React from 'react';
+import { Box, IconButton } from '@mui/material/';
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
-import { Box } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
 
 const InvitationDecisionButtons = ({
-  disabled,
   acceptInvitationHandler,
   rejectInvitationHandler,
+  disabled,
 }) => {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-      }}
-    >
-      <IconButton
-        style={{ color: 'white' }}
-        disabled={disabled}
-        onClick={acceptInvitationHandler}
-      >
+    <Box sx={{ display: 'flex' }}>
+      <IconButton style={{ color: 'white' }} disabled={disabled} onClick={acceptInvitationHandler}>
         <CheckIcon />
       </IconButton>
-      <IconButton
-        style={{ color: 'white' }}
-        disabled={disabled}
-        onClick={rejectInvitationHandler}
-      >
+      <IconButton style={{ color: 'white' }} disabled={disabled} onClick={rejectInvitationHandler}>
         <ClearIcon />
       </IconButton>
     </Box>

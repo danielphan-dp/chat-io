@@ -1,4 +1,4 @@
-import { ChatActions } from '../actions/chat.actions';
+import { ChatActions } from '../actions.types/chat.actions.types';
 
 const initialState = {
   chatType: null,

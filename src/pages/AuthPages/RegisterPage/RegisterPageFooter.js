@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Tooltip } from '@mui/material';
-import CustomPrimaryButton from '../../../shared/components/CustomPrimaryButton';
-import RedirectInfo from '../../../shared/components/RedirectInfo';
+import CustomPrimaryButton from '../../../components/CustomPrimaryButton';
+import RedirectInfo from '../../../components/RedirectInfo';
 
 const RegisterPageFooter = ({ handleRegister, isFormValid }) => {
   const navigate = useNavigate();

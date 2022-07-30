@@ -1,4 +1,4 @@
-import alertActions from '../actions/alert.actions';
+import { AlertActions } from '../actions.types/alert.actions.types';
 
 const initialState = {
   showAlertMessage: false,
@@ -8,13 +8,13 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case alertActions.OPEN_ALERT_MESSAGE:
+    case AlertActions.OPEN_ALERT_MESSAGE:
       return {
         ...state,
         showAlertMessage: true,
         alertMessageContent: payload.content,
       };
-    case alertActions.CLOSE_ALERT_MESSAGE:
+    case AlertActions.CLOSE_ALERT_MESSAGE:
       return {
         ...state,
         showAlertMessage: false,

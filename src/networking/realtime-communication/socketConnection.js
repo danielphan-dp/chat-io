@@ -13,7 +13,7 @@ import {
 } from '../../store/actions/friends.actions';
 
 // Helper functions
-import { updateDirectChatHistoryIfActive } from '../../shared/utils/chat';
+import { updateDirectChatHistoryIfActive } from '../../services/chat.service';
 
 // ----------------------------------------------
 // | The Web Socket for Client-Server Interface |

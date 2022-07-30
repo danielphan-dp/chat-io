@@ -1,13 +1,10 @@
-import { setMessages } from '../../store/actions/chat.actions';
-import store from '../../store/store';
+import { setMessages } from '../store/actions/chat.actions';
+import store from '../store/store';
 
 export const updateDirectChatHistoryIfActive = (data) => {
   const { participants, messages } = data;
-
-  // find if of user from token and id from active conversation
   const receiverId = store.getState().chat.chosenChatDetails?.id;
   const userId = store.getState().auth.userDetails._id;
-
   if (receiverId && userId) {
     const usersInConversation = [receiverId, userId];
     updateChatHistoryIfSameConversationActive({

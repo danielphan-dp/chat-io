@@ -1,39 +1,24 @@
-import * as React from 'react';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-
-import { IconButton } from '@mui/material';
+import React, { useState } from 'react';
+import * as authService from '../../../services/auth.service';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
-import { logout } from '../../../shared/utils/auth';
+import { IconButton, MenuItem, Menu } from '@mui/material';
 
 const DropdownMenu = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
     <div>
-      <IconButton onClick={handleMenuOpen} style={{ color: 'white' }}>
+      <IconButton onClick={(e) => setAnchorEl(e.currentTarget)} style={{ color: 'white' }}>
         <MoreVertIcon />
       </IconButton>
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
-        onClose={handleMenuClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
+        onClose={() => setAnchorEl(null)}
+        MenuListProps={{ 'aria-labelledby': 'basic-button' }}
       >
-        <MenuItem onClick={logout}>Logout</MenuItem>
+        <MenuItem onClick={authService.logout()}>Logout</MenuItem>
       </Menu>
     </div>
   );

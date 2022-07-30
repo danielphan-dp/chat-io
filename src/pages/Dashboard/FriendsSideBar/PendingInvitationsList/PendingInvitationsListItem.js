@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Tooltip, Typography, Box } from '@mui/material';
-import Avatar from '../../../../shared/components/Avatar';
-import InvitationDecisionButtons from './InvitationDecisionButtons';
-
-import { connect } from 'react-redux';
 import { getActions } from '../../../../store/actions/friends.actions';
+import { connect } from 'react-redux';
+import { Tooltip, Typography, Box } from '@mui/material';
+import Avatar from '../../../../components/Avatar';
+import InvitationDecisionButtons from './InvitationDecisionButtons';
 
 const PendingInvitationsListItem = ({
   id,
@@ -13,18 +12,7 @@ const PendingInvitationsListItem = ({
   acceptFriendInvitation = () => {},
   rejectFriendInvitation = () => {},
 }) => {
-  const [buttonsDisabled, setButtonDisabled] = useState(false);
-
-  const handleAcceptInvitation = () => {
-    acceptFriendInvitation({ id });
-    setButtonDisabled(true);
-  };
-
-  const handleRejectInvitation = () => {
-    rejectFriendInvitation({ id });
-    setButtonDisabled(true);
-  };
-
+  const [buttonDisabled, setButtonDisabled] = useState(false);
   return (
     <Tooltip title={mail}>
       <div style={{ width: '100%' }}>
@@ -51,9 +39,15 @@ const PendingInvitationsListItem = ({
             {username}
           </Typography>
           <InvitationDecisionButtons
-            disabled={buttonsDisabled}
-            acceptInvitationHandler={handleAcceptInvitation}
-            rejectInvitationHandler={handleRejectInvitation}
+            disabled={buttonDisabled}
+            acceptInvitationHandler={() => {
+              acceptFriendInvitation({ id });
+              setButtonDisabled(true);
+            }}
+            rejectInvitationHandler={() => {
+              rejectFriendInvitation({ id });
+              setButtonDisabled(true);
+            }}
           />
         </Box>
       </div>
@@ -61,10 +55,16 @@ const PendingInvitationsListItem = ({
   );
 };
 
-const mapActionsToProps = (dispatch) => {
+const mapStateToProps = null;
+
+const mapDispatchToProps = (dispatch) => {
   return {
     ...getActions(dispatch),
   };
 };
 
-export default connect(null, mapActionsToProps)(PendingInvitationsListItem);
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PendingInvitationsListItem);

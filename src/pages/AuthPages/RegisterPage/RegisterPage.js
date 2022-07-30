@@ -2,22 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getActions } from '../../../store/actions/auth.actions';
-import { validateRegisterForm } from '../../../shared/utils/validators';
+import * as validateService from '../../../services/validate.service';
 
-import AuthBox from '../../../shared/components/AuthBox';
+import AuthBox from '../../../components/AuthBox';
 import RegisterPageHeader from './RegisterPageHeader';
 import RegisterPageInputs from './RegisterPageInputs';
 import RegisterPageFooter from './RegisterPageFooter';
 
 const RegisterPage = ({ register }) => {
-  let navigate = useNavigate();
   const [mail, setMail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
+  let navigate = useNavigate();
 
   useEffect(() => {
-    setIsFormValid(validateRegisterForm(mail, password, username));
+    setIsFormValid(validateService.validateRegisterForm(mail, password, username));
   }, [mail, password, username, setIsFormValid]);
 
   // prettier-ignore

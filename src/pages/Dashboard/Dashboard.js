@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
+import { styled } from '@mui/system';
 import { connectWithSocketServer } from '../../networking/realtime-communication/socketConnection';
-import { logout } from '../../shared/utils/auth';
+import * as authService from '../../services/auth.service';
 import { connect } from 'react-redux';
 import { getActions } from '../../store/actions/auth.actions';
-import { styled } from '@mui/system';
+
 import AppBar from './AppBar/AppBar';
 import SideBar from './SideBar/SideBar';
 import FriendsSideBar from './FriendsSideBar/FriendsSideBar';
 import Messenger from './Messenger/Messenger';
 
-const DashboardWrapper = styled('div')({
+const Wrapper = styled('div')({
   width: '100%',
   height: '100vh',
   display: 'flex',
@@ -19,19 +20,19 @@ const Dashboard = ({ setUserDetails }) => {
   useEffect(() => {
     const userDetails = localStorage.getItem('user');
     if (!userDetails) {
-      logout();
+      authService.logout();
     } else {
       setUserDetails(JSON.parse(userDetails));
       connectWithSocketServer(JSON.parse(userDetails));
     }
   }, []);
   return (
-    <DashboardWrapper>
+    <Wrapper>
       <SideBar />
       <FriendsSideBar />
       <Messenger />
       <AppBar />
-    </DashboardWrapper>
+    </Wrapper>
   );
 };
 
