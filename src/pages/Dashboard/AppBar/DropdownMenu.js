@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as authService from '../../../services/auth.service';
+import * as authService from '../../../services/Auth.service';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { IconButton, MenuItem, Menu } from '@mui/material';
 

@@ -6,12 +6,12 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action;
+  const { userDetails } = payload || {};
   switch (type) {
     case AuthActions.SET_USER_DETAILS:
-      const { userDetails } = payload;
       return {
         ...state,
-        userDetails: userDetails,
+        userDetails,
       };
     default:
       return state;

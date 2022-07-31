@@ -13,7 +13,9 @@ const Wrapper = styled('div')({
 const WelcomeMessage = () => {
   return (
     <Wrapper variant="h6" sx={{ color: 'white' }}>
-      <Typography>Welcome! Thank you for using our services!</Typography>
+      <Typography variant="h5" display="block">
+        Welcome back!
+      </Typography>
     </Wrapper>
   );
 };

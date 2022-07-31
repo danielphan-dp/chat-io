@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getActions } from '../../../store/actions/auth.actions';
-import * as validateService from '../../../services/validate.service';
+import { validateRegisterForm } from '../../../services/Validate.services/FormValidate.service';
 
 import AuthBox from '../../../components/AuthBox';
 import RegisterPageHeader from './RegisterPageHeader';
@@ -17,7 +17,7 @@ const RegisterPage = ({ register }) => {
   let navigate = useNavigate();
 
   useEffect(() => {
-    setIsFormValid(validateService.validateRegisterForm(mail, password, username));
+    setIsFormValid(validateRegisterForm(mail, password, username));
   }, [mail, password, username, setIsFormValid]);
 
   // prettier-ignore

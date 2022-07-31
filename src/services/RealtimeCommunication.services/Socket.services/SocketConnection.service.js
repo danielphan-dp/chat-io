@@ -5,23 +5,29 @@ import {
   setPendingFriendsInvitations,
   setOnlineUsers,
 } from '../../store/actions/friends.actions';
-import { updateDirectChatHistoryIfActive } from '../../services/Chat.service';
+import { updateDirectChatHistoryIfActive } from '../Chat.service';
 
 let socket = null;
 
 export const connectWithSocketServer = (userDetails) => {
   const { token } = userDetails;
+
   socket = io('http://localhost:5002', { auth: { token } });
+
   socket.on('connect', () => {});
+
   socket.on('friends-invitations', ({ pendingInvitations }) => {
     store.dispatch(setPendingFriendsInvitations(pendingInvitations));
   });
+
   socket.on('friends-list', ({ friends }) => {
     store.dispatch(setFriends(friends));
   });
+
   socket.on('online-users', ({ onlineUsers }) => {
     store.dispatch(setOnlineUsers(onlineUsers));
   });
+
   socket.on('direct-chat-history', (data) => {
     updateDirectChatHistoryIfActive(data);
   });

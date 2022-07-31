@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { validateMail } from '../../../services/validate.service';
+import { validateMail } from '../../../services/Validate.services/InputValidate.service';
 import { connect } from 'react-redux';
 import { getActions } from '../../../store/actions/friends.actions';
+
 import Typography from '@mui/material/Typography';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
+
 import InputWithLabel from '../../../components/InputWithLabels';
 import CustomPrimaryButton from '../../../components/CustomPrimaryButton';
 
@@ -18,10 +20,6 @@ const AddFriendDialog = ({ isDialogOpen, closeDialogHandler, sendFriendInvitatio
   useEffect(() => {
     setIsFormValid(validateMail(mail));
   }, [mail, setIsFormValid]);
-
-  const handleSendInvitation = () => {
-    sendFriendInvitation({ targetMailAddress: mail }, handleCloseDialog);
-  };
 
   const handleCloseDialog = () => {
     closeDialogHandler();
@@ -35,28 +33,29 @@ const AddFriendDialog = ({ isDialogOpen, closeDialogHandler, sendFriendInvitatio
           <Typography>
             <h2>Invite a Friend</h2>
           </Typography>
-        </DialogTitle>
-        <DialogContent>
           <DialogContentText>
             <Typography>Enter e-mail of the user you want to invite!</Typography>
           </DialogContentText>
+        </DialogTitle>
+        <DialogContent>
           <InputWithLabel
-            label="Mail"
             type="text"
-            value={mail}
-            setValue={setMail}
-            placeholder="Enter mail address"
+            label="E-Mail Address"
+            placeholder="example@domain.com"
+            valueHook={{ value: mail, setValue: setMail }}
           />
         </DialogContent>
         <DialogActions>
           <CustomPrimaryButton
-            onClick={handleSendInvitation}
-            disabled={!isFormValid}
             label="Send"
             additionalStyles={{
               marginLeft: '15px',
               marginRight: '15px',
-              marginBottom: '10px',
+              marginBottom: '15px',
+            }}
+            disabled={!isFormValid}
+            onClick={() => {
+              sendFriendInvitation({ targetMailAddress: mail }, handleCloseDialog);
             }}
           />
         </DialogActions>

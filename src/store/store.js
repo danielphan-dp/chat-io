@@ -6,12 +6,14 @@ import authReducer from './reducers/auth.reducer';
 import alertReducer from './reducers/alert.reducer';
 import friendsReducer from './reducers/friends.reducer';
 import chatReducer from './reducers/chat.reducer';
+import roomReducer from './reducers/room.reducer';
 
 const rootReducer = combineReducers({
   auth: authReducer,
   alert: alertReducer,
   friends: friendsReducer,
   chat: chatReducer,
+  room: roomReducer,
 });
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));

@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '@mui/system';
-import Box from '@mui/material/Box';
+import { Box } from '@mui/material';
 
 const Wrapper = styled('div')({
   width: '100%',

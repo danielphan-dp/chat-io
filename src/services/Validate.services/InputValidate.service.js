@@ -9,11 +9,3 @@ export const validatePassword = (password) => {
 export const validateUsername = (username) => {
   return 3 <= username.length && username.length <= 12;
 };
-
-export const validateRegisterForm = (mail, password, username) => {
-  return validateMail(mail) && validatePassword(password) && validateUsername(username);
-};
-
-export const validateLoginForm = (mail, password) => {
-  return validateMail(mail) && validatePassword(password);
-};

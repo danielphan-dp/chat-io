@@ -10,7 +10,6 @@
 	Connect with others in real-time!
 </p>
 
-
 ## About The Project
 
 A real-time full-stack web application that support many useful features including: text messaging, video/voice calling, real-time notifications, and many more. All updates will run automatically without the need of refreshing your browser.
@@ -18,20 +17,20 @@ A real-time full-stack web application that support many useful features includi
 ### Core Technologies
 
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-  
+
 - ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
 - ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
+
+- ![WebRTC](https://a11ybadges.com/badge?logo=webrtc)
+
+- ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
 
 - ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
 - ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
 - ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
-
-- ![WebRTC](https://a11ybadges.com/badge?logo=webrtc)
-
-- ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
 
 - ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
@@ -85,14 +84,13 @@ To test the features, it is the best to run the front-end and the back-end in tw
   ```
 
 - Start a new terminal window, go the to the front-end folder, and run the front-end dev server.
-  
+
   ```sh
   cd <FOLDER-OF-FRONT-END-REPO>
   npm start
   ```
 
 - The application should be available in `localhost:3000`.
-
 
 ### Others
 
@@ -146,21 +144,21 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 2. Create your Feature Branch
 
-    ```sh
-    git checkout -b feature/<YOUR-AMAZING-PROPOSED-FEATURE>
-    ```
+   ```sh
+   git checkout -b feature/<YOUR-AMAZING-PROPOSED-FEATURE>
+   ```
 
 3. Commit your Changes
 
-    ```sh
-    git commit -m <YOUR-COMMIT-MESSAGE>
-    ```
+   ```sh
+   git commit -m <YOUR-COMMIT-MESSAGE>
+   ```
 
 4. Push to the Branch
 
-    ```sh
-    git commit -m 'git push origin feature/<YOUR-AMAZING-PROPOSED-FEATURE>'
-    ```
+   ```sh
+   git commit -m 'git push origin feature/<YOUR-AMAZING-PROPOSED-FEATURE>'
+   ```
 
 5. Open a Pull Request
 

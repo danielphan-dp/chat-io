@@ -7,6 +7,7 @@ const Wrapper = styled('div')({ width: '97%', display: 'flex', marginTop: '10px'
 const MessageWrapper = styled('div')({ display: 'flex', flexDirection: 'column' });
 const AvatarWrapper = styled('div')({ width: '70px' });
 const MessageContent = styled('div')({ color: '#DCDDDE' });
+
 const SameAuthorMessageText = styled('span')({ marginLeft: '70px' });
 const SameAuthorMessageContent = styled('div')({ color: '#DCDDDE', width: '97%' });
 
@@ -18,6 +19,7 @@ const Message = ({ content, sameAuthor, username, date, sameDay }) => {
       </SameAuthorMessageContent>
     );
   }
+
   return (
     <Wrapper>
       <AvatarWrapper>

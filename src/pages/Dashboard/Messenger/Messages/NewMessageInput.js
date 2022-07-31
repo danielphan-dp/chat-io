@@ -24,30 +24,22 @@ const Input = styled('input')({
 
 const NewMessageInput = ({ chosenChatDetails }) => {
   const [message, setMessage] = useState('');
-  const handleMessageValueChange = (event) => {
-    setMessage(event.target.value);
-  };
-  const handleKeyPressed = (event) => {
-    if (event.key === 'Enter') {
-      handleSendMessage();
-    }
-  };
+
   const handleSendMessage = () => {
-    if (message.length > 0) {
-      sendDirectMessage({
-        receiverUserId: chosenChatDetails.id,
-        content: message,
-      });
-      setMessage('');
-    }
+    sendDirectMessage({
+      receiverUserId: chosenChatDetails.id,
+      content: message,
+    });
+    setMessage('');
   };
+
   return (
     <Wrapper>
       <Input
         value={message}
         placeholder={`Write message to ${chosenChatDetails.name}`}
-        onChange={handleMessageValueChange}
-        onKeyDown={handleKeyPressed}
+        onChange={(e) => setMessage(e.target.value)}
+        onKeyDown={(e) => e.key === 'Enter' && message.length > 0 && handleSendMessage()}
       />
     </Wrapper>
   );
