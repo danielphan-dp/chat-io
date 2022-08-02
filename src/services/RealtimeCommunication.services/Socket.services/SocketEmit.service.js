@@ -1,9 +1,13 @@
-import { getSocketInstance } from './_state';
+import { getIo } from './_state';
 
 export const sendDirectMessage = (data) => {
-  getSocketInstance().emit('direct-message', data);
+  getIo().emit('direct-message', data);
 };
 
 export const getDirectChatHistory = (data) => {
-  getSocketInstance().emit('direct-chat-history', data);
+  getIo().emit('direct-chat-history', data);
+};
+
+export const createNewRoom = () => {
+  getIo().emit('room-create');
 };

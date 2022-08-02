@@ -11,7 +11,7 @@ const RegisterPageFooter = ({ handleRegister, isFormValid }) => {
       <Tooltip
         title={
           !isFormValid
-            ? 'Username should contains between 3 and 12 characters and password should contains between 6 and 12 character. Also correct e-mail address should be provided.'
+            ? 'Valid e-mail, username (6-20 characters) and password (6-20 characters) required.'
             : 'Press to register!'
         }
       >

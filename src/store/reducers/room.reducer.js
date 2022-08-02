@@ -21,6 +21,21 @@ const reducer = (state = initialState, action) => {
         isUserInRoom: payload.isUserInRoom,
         isUserRoomCreator: payload.isUserRoomCreator,
       };
+    case RoomActions.SET_ROOM_DETAILS:
+      return {
+        ...state,
+        roomDetails: payload.roomDetails,
+      };
+    case RoomActions.SET_ACTIVE_ROOMS:
+      return {
+        ...state,
+        activeRooms: payload.activeRooms,
+      };
+    case RoomActions.SET_LOCAL_STREAM:
+      return {
+        ...state,
+        localStream: payload.localStream,
+      };
     default:
       return state;
   }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/system';
 import { connect } from 'react-redux';
-import { sendDirectMessage } from '../../../../networking/realtime-communication/socketConnection';
+import * as SocketConnectionService from '../../../../services/RealtimeCommunication.services/Socket.services/SocketConnection.service';
 
 const Wrapper = styled('div')({
   height: '60px',
@@ -26,7 +26,7 @@ const NewMessageInput = ({ chosenChatDetails }) => {
   const [message, setMessage] = useState('');
 
   const handleSendMessage = () => {
-    sendDirectMessage({
+    SocketConnectionService.sendDirectMessage({
       receiverUserId: chosenChatDetails.id,
       content: message,
     });
@@ -37,7 +37,7 @@ const NewMessageInput = ({ chosenChatDetails }) => {
     <Wrapper>
       <Input
         value={message}
-        placeholder={`Write message to ${chosenChatDetails.name}`}
+        placeholder={'Type a message...'}
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && message.length > 0 && handleSendMessage()}
       />

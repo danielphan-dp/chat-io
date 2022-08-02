@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { styled } from '@mui/system';
-import { connectWithSocketServer } from '../../networking/realtime-communication/socketConnection';
 import { connect } from 'react-redux';
 import { getActions } from '../../store/actions/auth.actions';
+import * as SocketConnectionService from '../../services/RealtimeCommunication.services/Socket.services/SocketConnection.service';
 import * as AuthService from '../../services/Auth.service';
 import AppBar from './AppBar/AppBar';
 import SideBar from './SideBar/SideBar';
@@ -24,7 +24,7 @@ const Dashboard = ({ isUserInRoom, setUserDetails }) => {
       AuthService.logout();
     } else {
       setUserDetails(JSON.parse(userDetails));
-      connectWithSocketServer(JSON.parse(userDetails));
+      SocketConnectionService.connectWithSocketServer(JSON.parse(userDetails));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

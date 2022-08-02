@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { styled } from '@mui/system';
 import { connect } from 'react-redux';
-import { getDirectChatHistory } from '../../../networking/realtime-communication/socketConnection';
+import * as SocketConnectionService from '../../../services/RealtimeCommunication.services/Socket.services/SocketConnection.service';
 import Messages from './Messages/Messages';
 import NewMessageInput from './Messages/NewMessageInput';
 
@@ -11,7 +11,7 @@ const Wrapper = styled('div')({
 
 const MessengerContent = ({ chosenChatDetails }) => {
   useEffect(() => {
-    getDirectChatHistory({
+    SocketConnectionService.getDirectChatHistory({
       receiverUserId: chosenChatDetails.id,
     });
   }, [chosenChatDetails]);

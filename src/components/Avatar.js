@@ -11,7 +11,7 @@ const AvatarPreview = styled('div')({
   justifyContent: 'center',
   fontSize: '20px',
   fontWeight: '700',
-  marginLeft: '5px',
+  // marginLeft: '5px',
   color: 'white',
 });
 
