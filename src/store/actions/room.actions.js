@@ -36,3 +36,19 @@ export const setLocalStream = (localStream) => {
     },
   };
 };
+
+export const setAudioOnly = (audioOnly) => {
+  return {
+    type: RoomActions.SET_AUDIO_ONLY,
+    payload: {
+      audioOnly,
+    },
+  };
+};
+
+// prettier-ignore
+export const getActions = (dispatch) => {
+  return {
+    setAudioOnly: (audioOnly) => dispatch(setAudioOnly(audioOnly)),
+  };
+};

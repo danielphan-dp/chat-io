@@ -2,6 +2,7 @@ import React from 'react';
 import { styled } from '@mui/system';
 import DropdownMenu from './DropdownMenu';
 import ChosenOptionLabel from './ChosenOptionLabel';
+import { Person } from '@mui/icons-material';
 
 const Wrapper = styled('div')({
   position: 'absolute',
@@ -20,6 +21,7 @@ const Wrapper = styled('div')({
 const AppBar = () => {
   return (
     <Wrapper>
+      <Person style={{ height: '100%', align: 'center', color: 'white' }} />
       <ChosenOptionLabel />
       <DropdownMenu />
     </Wrapper>

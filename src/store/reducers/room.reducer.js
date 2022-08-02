@@ -36,6 +36,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         localStream: payload.localStream,
       };
+    case RoomActions.SET_AUDIO_ONLY:
+      return {
+        ...state,
+        audioOnly: payload.audioOnly,
+      };
     default:
       return state;
   }

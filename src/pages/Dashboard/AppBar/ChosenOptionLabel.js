@@ -5,9 +5,11 @@ import { getActions } from '../../../store/actions/chat.actions';
 
 const ChosenOptionLabel = ({ name }) => {
   return (
-    <Typography sx={{ fontSize: '16px', color: 'white', fontWeight: 'bold' }}>
-      {`${name ? `User(s): ${name}` : ''}`}
-    </Typography>
+    <>
+      <Typography sx={{ fontSize: '16px', color: 'white', fontWeight: 'bold' }}>
+        {`${name ? `${name}` : ''}`}
+      </Typography>
+    </>
   );
 };
 

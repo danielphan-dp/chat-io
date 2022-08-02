@@ -1,6 +1,9 @@
 import React from 'react';
 import { Tooltip, Button } from '@mui/material';
-import { ConnectedTv as ConnectedTvIcon } from '@mui/icons-material';
+import {
+  ConnectedTv as ConnectedTvIcon,
+  CastConnected as CastConnectedIcon,
+} from '@mui/icons-material';
 import * as VideoChatRoomService from '../../../services/RealtimeCommunication.services/Room.services/VideoChatRoom.service';
 
 const ActiveRoomButton = ({ key, roomId, creatorUsername, numberOfParticipants, isUserInRoom }) => {
@@ -22,7 +25,7 @@ const ActiveRoomButton = ({ key, roomId, creatorUsername, numberOfParticipants, 
           disabled={numberOfParticipants >= 4 || isUserInRoom}
           onClick={() => numberOfParticipants < 4 && VideoChatRoomService.joinRoom(roomId)}
         >
-          <ConnectedTvIcon />
+          {isUserInRoom ? <CastConnectedIcon /> : <ConnectedTvIcon />}
         </Button>
       </div>
     </Tooltip>

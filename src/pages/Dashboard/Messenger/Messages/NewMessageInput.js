@@ -37,7 +37,7 @@ const NewMessageInput = ({ chosenChatDetails }) => {
     <Wrapper>
       <Input
         value={message}
-        placeholder={'Type a message...'}
+        placeholder={'Type a message'}
         onChange={(e) => setMessage(e.target.value)}
         onKeyDown={(e) => e.key === 'Enter' && message.length > 0 && handleSendMessage()}
       />
