@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/system';
 import { connect } from 'react-redux';
-import * as SocketConnectionService from '../../../../services/RealtimeCommunication.services/Socket.services/SocketConnection.service';
+import * as SocketConnectionService from '../../../../services/RealtimeCommunication/SocketConnection.service';
 
 const Wrapper = styled('div')({
   height: '60px',

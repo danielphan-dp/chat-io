@@ -1,4 +1,4 @@
-import { FriendsActions } from '../actions.types/friends.actions.types';
+import { FriendsActions } from './friends.actions.types';
 
 const initialState = {
   friends: [],

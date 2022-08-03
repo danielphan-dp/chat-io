@@ -1,4 +1,4 @@
-import { ChatActions } from '../actions.types/chat.actions.types';
+import { ChatActions } from './chat.actions.types';
 
 export const setChosenChatDetails = (chatType, chosenChatDetails) => {
   return {

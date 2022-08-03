@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { validateMail } from '../../../services/Validate.services/InputValidate.service';
+import { validateMail } from '../../../services/Validate/InputValidate.service';
 import { connect } from 'react-redux';
-import { getActions } from '../../../store/actions/friends.actions';
+import { getActions } from '../../../store/friends/friends.actions';
 
 import Typography from '@mui/material/Typography';
 import Dialog from '@mui/material/Dialog';

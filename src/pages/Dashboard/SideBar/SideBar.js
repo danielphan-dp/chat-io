@@ -18,8 +18,7 @@ const SideBar = ({ activeRooms, isUserInRoom }) => {
   return (
     <Wrapper>
       <MainPageButton />
-      <CreateRoomButton />
-
+      <CreateRoomButton isUserInRoom={isUserInRoom} />
       {activeRooms.map(({ roomId, creatorUsername, participants }) => (
         <ActiveRoomButton
           key={roomId}

@@ -1,4 +1,4 @@
-import { RoomActions } from '../actions.types/room.actions.types';
+import { RoomActions } from './room.actions.types';
 
 const initialState = {
   isUserInRoom: false,
@@ -10,6 +10,7 @@ const initialState = {
   audioOnly: false,
   screenSharingStream: null,
   isScreenSharingActive: false,
+  isUserJoinedWithOnlyAudio: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -40,6 +41,22 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         audioOnly: payload.audioOnly,
+      };
+    case RoomActions.SET_REMOTE_STREAMS:
+      return {
+        ...state,
+        remoteStreams: payload.remoteStreams,
+      };
+    case RoomActions.SET_SCREEN_SHARING_STREAM:
+      return {
+        ...state,
+        isScreenSharingActive: payload.isScreenSharingActive,
+        screenSharingStream: payload.screenSharingStream,
+      };
+    case RoomActions.SET_IS_USER_JOINED_WITH_ONLY_AUDIO:
+      return {
+        ...state,
+        isUserJoinedWithOnlyAudio: payload.isUserJoinedWithOnlyAudio,
       };
     default:
       return state;

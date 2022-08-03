@@ -1,9 +1,9 @@
 import React from 'react';
-import * as VideoChatRoomService from '../../../services/RealtimeCommunication.services/Room.services/VideoChatRoom.service';
+import * as VideoChatRoomService from '../../../services/RealtimeCommunication/VideoChatRoom.service';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 
-const CreateRoomButton = () => {
+const CreateRoomButton = ({ isUserInRoom }) => {
   return (
     <Button
       style={{
@@ -17,6 +17,7 @@ const CreateRoomButton = () => {
         color: 'white',
         backgroundColor: '#5865F2',
       }}
+      disabled={isUserInRoom}
       onClick={() => VideoChatRoomService.createNewRoom()}
     >
       <AddIcon />

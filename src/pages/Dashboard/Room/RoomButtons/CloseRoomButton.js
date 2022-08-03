@@ -1,7 +1,7 @@
 import React from 'react';
 import { IconButton } from '@mui/material';
 import { Close as CloseIcon } from '@mui/icons-material';
-import * as VideoChatRoomService from '../../../../services/RealtimeCommunication.services/Room.services/VideoChatRoom.service';
+import * as VideoChatRoomService from '../../../../services/RealtimeCommunication/VideoChatRoom.service';
 
 const CloseRoomButton = () => {
   return (

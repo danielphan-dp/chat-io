@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { styled } from '@mui/system';
 import { connect } from 'react-redux';
-import { getActions } from '../../store/actions/auth.actions';
-import * as SocketConnectionService from '../../services/RealtimeCommunication.services/Socket.services/SocketConnection.service';
-import * as AuthService from '../../services/Auth.service';
+import { getActions } from '../../store/auth/auth.actions';
+import * as SocketConnectionService from '../../services/RealtimeCommunication/SocketConnection.service';
+import * as AuthService from '../../services/Auth/Auth.service';
 import AppBar from './AppBar/AppBar';
 import SideBar from './SideBar/SideBar';
 import FriendsSideBar from './FriendsSideBar/FriendsSideBar';

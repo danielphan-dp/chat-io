@@ -2,11 +2,11 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import authReducer from './reducers/auth.reducer';
-import alertReducer from './reducers/alert.reducer';
-import friendsReducer from './reducers/friends.reducer';
-import chatReducer from './reducers/chat.reducer';
-import roomReducer from './reducers/room.reducer';
+import authReducer from './auth/auth.reducer';
+import alertReducer from './alert/alert.reducer';
+import friendsReducer from './friends/friends.reducer';
+import chatReducer from './chat/chat.reducer';
+import roomReducer from './room/room.reducer';
 
 const rootReducer = combineReducers({
   auth: authReducer,

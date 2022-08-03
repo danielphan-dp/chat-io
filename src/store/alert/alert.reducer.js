@@ -1,4 +1,4 @@
-import { AlertActions } from '../actions.types/alert.actions.types';
+import { AlertActions } from './alert.actions.types';
 
 const initialState = {
   showAlertMessage: false,

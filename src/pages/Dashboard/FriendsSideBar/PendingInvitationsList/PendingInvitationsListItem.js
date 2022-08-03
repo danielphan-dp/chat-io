@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getActions } from '../../../../store/actions/friends.actions';
+import { getActions } from '../../../../store/friends/friends.actions';
 import { connect } from 'react-redux';
 import { Tooltip, Typography, Box } from '@mui/material';
 import Avatar from '../../../../components/Avatar';

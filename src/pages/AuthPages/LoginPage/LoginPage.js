@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getActions } from '../../../store/actions/auth.actions';
-import { validateLoginForm } from '../../../services/Validate.services/FormValidate.service';
+import { getActions } from '../../../store/auth/auth.actions';
+import { validateLoginForm } from '../../../services/Validate/FormValidate.service';
 
 import AuthBox from '../../../components/AuthBox';
 import LoginPageHeader from './LoginPageHeader';

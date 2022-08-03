@@ -1,5 +1,5 @@
-import store from '../store/store';
-import { setMessages } from '../store/actions/chat.actions';
+import store from '../../store/store';
+import { setMessages } from '../../store/chat/chat.actions';
 
 export const updateDirectChatHistoryIfActive = ({ participants, messages }) => {
   const receiverId = store.getState().chat.chosenChatDetails?.id;

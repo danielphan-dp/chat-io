@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/system';
-import { connect } from 'react-redux';
 import Video from './Video';
+import { connect } from 'react-redux';
 
 const Wrapper = styled('div')({
   width: '100%',
@@ -9,18 +9,25 @@ const Wrapper = styled('div')({
   flexWrap: 'wrap',
 });
 
-const fullScreenRoomStyle = {
-  height: '92%',
-};
-
-const minimizedRoomStyle = {
-  height: '85%',
-};
-
-const VideoContainer = ({ isRoomMinimized, localStream, isLocalStream }) => {
+const VideoContainer = ({
+  localStream,
+  isLocalStream,
+  remoteStreams,
+  screenSharingStream,
+  isRoomMinimized,
+}) => {
   return (
-    <Wrapper style={isRoomMinimized ? minimizedRoomStyle : fullScreenRoomStyle}>
-      <Video stream={localStream} isLocalStream />
+    <Wrapper style={{ height: isRoomMinimized ? '85%' : '92%' }}>
+      <Video
+        {...{
+          key: localStream.id,
+          stream: screenSharingStream ? screenSharingStream : localStream,
+          isLocalStream: isLocalStream,
+        }}
+      />
+      {remoteStreams.map((remoteStream) => (
+        <Video {...{ key: remoteStream.id, stream: remoteStream, isLocalStream: !isLocalStream }} />
+      ))}
     </Wrapper>
   );
 };
@@ -31,4 +38,10 @@ const mapStateToProps = ({ room }) => {
   };
 };
 
-export default connect(mapStateToProps, null)(VideoContainer);
+const mapDispatchToProps = null;
+
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(VideoContainer);

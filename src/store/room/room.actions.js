@@ -1,4 +1,4 @@
-import { RoomActions } from '../actions.types/room.actions.types';
+import { RoomActions } from './room.actions.types';
 
 export const setOpenRoom = (isUserRoomCreator = false, isUserInRoom = false) => {
   return {
@@ -46,9 +46,39 @@ export const setAudioOnly = (audioOnly) => {
   };
 };
 
+export const setRemoteStreams = (remoteStreams) => {
+  return {
+    type: RoomActions.SET_REMOTE_STREAMS,
+    payload: {
+      remoteStreams,
+    },
+  };
+};
+
+export const setScreenSharingStream = (stream) => {
+  return {
+    type: RoomActions.SET_SCREEN_SHARING_STREAM,
+    payload: {
+      isScreenSharingActive: stream ? true : false,
+      screenSharingStream: stream || null,
+    },
+  };
+};
+
+export const setIsUserJoiningWithOnlyAudio = (isUserJoinedWithOnlyAudio) => {
+  return {
+    type: RoomActions.SET_IS_USER_JOINED_WITH_ONLY_AUDIO,
+    payload: {
+      isUserJoinedWithOnlyAudio,
+    },
+  };
+};
+
 // prettier-ignore
 export const getActions = (dispatch) => {
   return {
     setAudioOnly: (audioOnly) => dispatch(setAudioOnly(audioOnly)),
+    setRemoteStreams: (remoteStreams) => dispatch(setRemoteStreams(remoteStreams)),
+    setScreenSharingStream: (stream) => dispatch(setScreenSharingStream(stream)),
   };
 };

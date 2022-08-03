@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import * as authService from '../../../services/Auth.service';
+import * as authService from '../../../services/Auth/Auth.service';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { IconButton, MenuItem, Menu } from '@mui/material';
 import { connect } from 'react-redux';
-import { getActions } from 'src/store/actions/room.actions';
+import { getActions } from 'src/store/room/room.actions';
 import { Logout, Videocam, VideocamOff } from '@mui/icons-material';
 
 const DropdownMenu = ({ audioOnly, setAudioOnly }) => {

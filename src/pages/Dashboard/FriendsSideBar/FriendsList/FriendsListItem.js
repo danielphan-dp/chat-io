@@ -2,8 +2,8 @@ import React from 'react';
 import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { connect } from 'react-redux';
-import { getActions } from '../../../../store/actions/chat.actions';
-import { ChatTypes } from '../../../../store/actions.types/chat.actions.types';
+import { getActions } from '../../../../store/chat/chat.actions';
+import { ChatTypes } from '../../../../store/chat/chat.actions.types';
 import Avatar from '../../../../components/Avatar';
 import OnlineIndicator from './OnlineIndicator';
 

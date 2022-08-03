@@ -1,6 +1,6 @@
-import { FriendsActions } from '../actions.types/friends.actions.types';
-import * as authApi from '../../networking/api/authApi';
-import { openAlertMessage } from './alert.actions';
+import * as authApi from 'src/services/Api/AuthApi.service';
+import { openAlertMessage } from 'src/store/alert/alert.actions';
+import { FriendsActions } from './friends.actions.types';
 
 export const setFriends = (friends) => {
   return {
@@ -67,8 +67,6 @@ export const rejectFriendInvitation = ({ requestData }) => {
 export const getActions = (dispatch) => {
   return {
     setFriends: (data) => dispatch(setFriends({ requestData: data })),
-    // TODO: setPendingFriendsInvitations
-    // TODO: setOnlineUsers
     sendFriendInvitation: (data, closeDialogHandler) => dispatch(sendFriendInvitation(data, closeDialogHandler)),
     acceptFriendInvitation: (data) => dispatch(acceptFriendInvitation({ requestData: data })),
     rejectFriendInvitation: (data) => dispatch(rejectFriendInvitation({ requestData: data })),

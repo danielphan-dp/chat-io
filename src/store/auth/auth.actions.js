@@ -1,6 +1,6 @@
-import { AuthActions } from '../actions.types/auth.actions.types';
-import * as authApi from '../../networking/api/authApi';
-import { openAlertMessage } from './alert.actions';
+import { AuthActions } from './auth.actions.types';
+import * as authApi from 'src/services/Api/AuthApi.service';
+import { openAlertMessage } from '../alert/alert.actions';
 
 const setUserDetails = (userDetails) => {
   return {
