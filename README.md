@@ -7,14 +7,15 @@
 </h3>
 
 <p align="center">
-	Connect with others in real-time!
+	A web application to help you stay connected.
 </p>
+<p align="center">In real-time!</p>
 
 ## About The Project
 
-A real-time full-stack web application that support many useful features including:
-text messaging, video/voice calling, real-time notifications, and many more.
-All updates will run automatically without the need of refreshing your browser.
+A full-stack web application that support many useful real-time features including:
+text messaging, video/voice calling, notifications, and many more.
+Available in your local machine in just a few simple set-up steps.
 
 ### Core Technologies
 
