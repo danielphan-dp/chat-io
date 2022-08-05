@@ -35,7 +35,7 @@ const InputWithLabels = ({ type, label, valueHook: { value, setValue }, placehol
         type={type}
         placeholder={placeholder}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(event) => setValue(event.target.value)}
       />
     </InputWrapper>
   );

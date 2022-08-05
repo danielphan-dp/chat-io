@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { styled } from '@mui/system';
 import { connect } from 'react-redux';
-import * as SocketConnectionService from '../../../services/RealtimeCommunication/SocketConnection.service';
+import * as SocketConnectionService from '../../../services/realtime-communication/SocketConnection.service';
 import Messages from './Messages/Messages';
 import NewMessageInput from './Messages/NewMessageInput';
 

@@ -13,9 +13,9 @@ const ChosenOptionLabel = ({ name }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ chat }) => {
   return {
-    name: state.chat.chosenChatDetails?.name,
+    name: chat.chosenChatDetails?.name,
   };
 };
 

@@ -12,7 +12,9 @@
 
 ## About The Project
 
-A real-time full-stack web application that support many useful features including: text messaging, video/voice calling, real-time notifications, and many more. All updates will run automatically without the need of refreshing your browser.
+A real-time full-stack web application that support many useful features including:
+text messaging, video/voice calling, real-time notifications, and many more.
+All updates will run automatically without the need of refreshing your browser.
 
 ### Core Technologies
 
@@ -92,47 +94,63 @@ To test the features, it is the best to run the front-end and the back-end in tw
 
 - The application should be available in `localhost:3000`.
 
-### Others
-
-Automation shell scripts coming soon!
-
 ## Usage
 
-In progress... Check back soon!
+### Sign Up
+Enter your e-mail, username and chosen password (ideally a strong password).
+<p align="center">
+  <img src="./images/register/register-1.png" alt="register-image" width="90%" />
+</p>
+
+The submit button should be available immediately after valid input is entered.
+
+<p align="center">
+  <img src="./images/register/register-2.png" alt="register-image" width="90%" />
+</p>
+
+You are all set at this point!
+
+### Sign In
+
+
+### Dashboard UI
+<p align="center">
+  <img src="./images/dashboard/dashboard-1.png" alt="dashboard-image" width="90%" />
+</p>
+
+### Send Friend Request
+<p align="center">
+  <img src="./images/add-friend/add-friend-1.png" alt="dashboard-image" width="90%" />
+</p>
+
+### Accept Friend Request
+
+### Text Message
+
+### Video Calling
+
+### Video Call Rooms
+
+### Screen sharing
+
+### Online Indicator
+
 
 ## Features
 
-### Current Features
-
-- [x] Auto-matic Real-time Features without User Refreshing the Browser
-- [x] Real-time Private Text Messaging System
-- [x] Real-time Updates
-- [x] Friends Systems
-- [x] User Account Management and Authentication
-- [x] Intuitive and Easy-to-use User Interface
+- [x] Real-time text messaging, video calling, and updates
+- [x] Friends invitation system
+- [x] User ability to control different video and audio sources
+- [x] Compatible with screen sharing
+- [x] User sign up and sign in system
+- [x] Server-side and client-side invalid form information inputs handling
 
 ### Planned Features
 
-- [ ] Real-time Video Calling
-- [ ] GUI Themes and Modes
-  - [ ] Dark Mode, Light Mode, etc.
-  - [ ] Switchers Functionality for Themes and Modes
+- [ ] GUI Themes and Modes (Dark, Light, Solarized, etc.)
 - [ ] Chat Message Cells of Different Content Types
-  - [ ] Markdown Cells
+  - [ ] Markdown and LaTeX Cells
   - [ ] Code Cells (with Syntax Highlighting)
-  - [ ] LaTeX Cells
-  - [ ] React Components Cells
-  - [ ] Etc.
-- [ ] Advanced Features:
-  - [ ] In-browser Transpiler and Bundler (with Webpack or EsBuild)
-    - [ ] Render React Code Cells
-    - [ ] Execute JavaScript Functions
-  - [ ] Security
-    - [ ] For Running Code Cells
-      - [ ] Safely Execute User Code in Browser with Sand-boxing Techniques
-  - [ ] Machine Learning
-    - [ ] Automatic Text Completion
-    - [ ] Natural Language Processing Bots
 
 ## Contributing
 

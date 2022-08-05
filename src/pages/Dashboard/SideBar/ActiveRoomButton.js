@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tooltip, Button } from '@mui/material';
 import { Cast as CastIcon, CastConnected as CastConnectedIcon } from '@mui/icons-material';
-import * as VideoChatRoomService from '../../../services/RealtimeCommunication/VideoChatRoom.service';
+import * as VideoChatRoomService from '../../../services/realtime-communication/VideoChatRoom.service';
 
 const ActiveRoomButton = ({ key, roomId, creatorUsername, numberOfParticipants, isUserInRoom }) => {
   return (

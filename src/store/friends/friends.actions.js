@@ -1,4 +1,4 @@
-import * as authApi from 'src/services/Api/AuthApi.service';
+import * as authApi from 'src/services/api/AuthApi.service';
 import { openAlertMessage } from 'src/store/alert/alert.actions';
 import { FriendsActions } from './friends.actions.types';
 

@@ -4,7 +4,7 @@ import {
   ScreenShare as ScreenShareIcon,
   StopScreenShare as StopScreenShareIcon,
 } from '@mui/icons-material';
-import * as WebRTCService from 'src/services/RealtimeCommunication/WebRTC.service';
+import * as WebRTCService from 'src/services/realtime-communication/WebRTC.service';
 
 const constraints = {
   audio: false,

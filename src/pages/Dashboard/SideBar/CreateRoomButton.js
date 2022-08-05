@@ -1,5 +1,5 @@
 import React from 'react';
-import * as VideoChatRoomService from '../../../services/RealtimeCommunication/VideoChatRoom.service';
+import * as VideoChatRoomService from '../../../services/realtime-communication/VideoChatRoom.service';
 import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 

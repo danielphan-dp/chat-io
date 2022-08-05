@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { validateMail } from '../../../services/Validate/InputValidate.service';
+import { validateMail } from '../../../services/validate/InputValidate.service';
 import { connect } from 'react-redux';
 import { getActions } from '../../../store/friends/friends.actions';
 

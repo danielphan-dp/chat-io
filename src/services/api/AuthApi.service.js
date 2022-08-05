@@ -1,5 +1,5 @@
-import api from './__api-base__';
-import * as AuthService from '../Auth/Auth.service';
+import api from './_api_configs';
+import * as AuthService from '../auth/Auth.service';
 
 // interceptor
 api.interceptors.request.use(

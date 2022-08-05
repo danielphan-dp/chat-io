@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
-import * as authService from '../../../services/Auth/Auth.service';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { IconButton, MenuItem, Menu } from '@mui/material';
+import {
+  Logout as LogoutIcon,
+  Videocam as VideocamIcon,
+  VideocamOff as VideocamOffIcon,
+  MoreVert as MoreVertIcon,
+} from '@mui/icons-material';
+import * as authService from 'src/services/auth/Auth.service';
 import { connect } from 'react-redux';
 import { getActions } from 'src/store/room/room.actions';
-import { Logout, Videocam, VideocamOff } from '@mui/icons-material';
 
 const DropdownMenu = ({ audioOnly, setAudioOnly }) => {
   const [anchorElement, setAnchorElement] = useState(null);
   const open = Boolean(anchorElement);
   return (
     <div>
-      <IconButton onClick={(e) => setAnchorElement(e.currentTarget)} style={{ color: 'white' }}>
+      <IconButton
+        style={{ color: 'white' }}
+        onClick={(event) => setAnchorElement(event.currentTarget)}
+      >
         <MoreVertIcon />
       </IconButton>
       <Menu
@@ -22,11 +29,11 @@ const DropdownMenu = ({ audioOnly, setAudioOnly }) => {
         MenuListProps={{ 'aria-labelledby': 'basic-button' }}
       >
         <MenuItem onClick={() => setAudioOnly(!audioOnly)}>
-          {audioOnly ? <VideocamOff /> : <Videocam />} &nbsp; &nbsp;
+          {audioOnly ? <VideocamOffIcon /> : <VideocamIcon />} &nbsp; &nbsp;
           {audioOnly ? 'Audio Only On' : 'Audio Only Off'}
         </MenuItem>
         <MenuItem onClick={authService.logout}>
-          <Logout /> &nbsp; Logout
+          <LogoutIcon /> &nbsp; Logout
         </MenuItem>
       </Menu>
     </div>
@@ -45,4 +52,8 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DropdownMenu);
+// prettier-ignore
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(DropdownMenu);

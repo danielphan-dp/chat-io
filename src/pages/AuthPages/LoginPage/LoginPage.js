@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { getActions } from '../../../store/auth/auth.actions';
-import { validateLoginForm } from '../../../services/Validate/FormValidate.service';
-
-import AuthBox from '../../../components/AuthBox';
+import { validateLoginForm } from 'src/services/validate/FormValidate.service';
+import AuthBox from 'src/components/AuthBox';
 import LoginPageHeader from './LoginPageHeader';
 import LoginPageInputs from './LoginPageInputs';
 import LoginPageFooter from './LoginPageFooter';
+import { getActions } from 'src/store/auth/auth.actions';
+import { connect } from 'react-redux';
 
 const LoginPage = ({ login }) => {
   const [mail, setMail] = useState('');
