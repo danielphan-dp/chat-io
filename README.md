@@ -112,6 +112,25 @@ You are all set at this point!
 
 ### Sign In
 
+Enter your registered credentials, and you will be automatically redirected to the dashboard page.
+
+<p align="center">
+  <img src="./images/sign-in/sign-in-1.png" alt="sign-in-image" width="90%" />
+</p>
+
+<p align="center">
+  <img src="./images/sign-in/sign-in-2.png" alt="sign-in-image" width="90%" />
+</p>
+
+The server will provide promt when invalid credentials are entered.
+
+<p align="center">
+  <img src="./images/sign-in/sign-in-3.png" alt="sign-in-image" width="90%" />
+</p>
+
+<p align="center">
+  <img src="./images/sign-in/sign-in-4.png" alt="sign-in-image" width="90%" />
+</p>
 
 ### Dashboard UI
 <p align="center">
@@ -123,17 +142,33 @@ You are all set at this point!
   <img src="./images/add-friend/add-friend-1.png" alt="dashboard-image" width="90%" />
 </p>
 
+<p align="center">
+  <img src="./images/add-friend/add-friend-2.png" alt="dashboard-image" width="90%"/>
+</p>
+
+Your friend request will be updated in real-time to the other user!
+
+<p align="center">
+  <img src="./images/add-friend/add-friend-3.png" alt="dashboard-image" width="90%"/>
+</p>
+
 ### Accept Friend Request
 
+<p align="center">
+  <img src="./images/add-friend/add-friend-4.png" alt="dashboard-image" width="90%"/>
+</p>
+
 ### Text Message
+
+<p align="center">
+  <img src="./images/send-message/send-message-1.png" alt="dashboard-image" width="90%"/>
+</p>
 
 ### Video Calling
 
 ### Video Call Rooms
 
 ### Screen sharing
-
-### Online Indicator
 
 
 ## Features
@@ -144,6 +179,7 @@ You are all set at this point!
 - [x] Compatible with screen sharing
 - [x] User sign up and sign in system
 - [x] Server-side and client-side invalid form information inputs handling
+- [x] Compatible with multiple browsers (Chrome, Edge, Firefox, and Opera)
 
 ### Planned Features
 
