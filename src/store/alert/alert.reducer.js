@@ -5,14 +5,14 @@ const initialState = {
   alertMessageContent: null,
 };
 
-const reducer = (state = initialState, action) => {
+const alertReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case AlertActions.OPEN_ALERT_MESSAGE:
       return {
         ...state,
         showAlertMessage: true,
-        alertMessageContent: payload.content,
+        alertMessageContent: payload.alertMessageContent,
       };
     case AlertActions.CLOSE_ALERT_MESSAGE:
       return {
@@ -25,4 +25,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default alertReducer;

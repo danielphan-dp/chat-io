@@ -1,8 +1,8 @@
 import { AuthActions } from './auth.actions.types';
-import * as authApi from 'src/services/api/AuthApi.service';
+import * as AuthApi from 'src/services/api/AuthApi.service';
 import { openAlertMessage } from '../alert/alert.actions';
 
-const setUserDetails = (userDetails) => {
+export const setUserDetails = (userDetails) => {
   return {
     type: AuthActions.SET_USER_DETAILS,
     payload: {
@@ -11,12 +11,11 @@ const setUserDetails = (userDetails) => {
   };
 };
 
-const login = (userDetails, navigate) => {
+export const login = (userDetails, navigate) => {
   return async (dispatch) => {
-    const response = await authApi.login(userDetails);
+    const response = await AuthApi.login(userDetails);
     if (response.error) {
-      const alertMessage = response?.exception?.response?.data;
-      dispatch(openAlertMessage(alertMessage));
+      dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem('user', JSON.stringify(userDetails));
@@ -26,12 +25,11 @@ const login = (userDetails, navigate) => {
   };
 };
 
-const register = (userDetails, navigate) => {
+export const register = (userDetails, navigate) => {
   return async (dispatch) => {
-    const response = await authApi.register(userDetails);
+    const response = await AuthApi.register(userDetails);
     if (response.error) {
-      const alertMessage = response?.exception?.response?.data;
-      dispatch(openAlertMessage(alertMessage));
+      dispatch(openAlertMessage(response?.exception?.response?.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem('user', JSON.stringify(userDetails));

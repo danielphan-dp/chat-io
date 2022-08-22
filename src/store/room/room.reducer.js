@@ -13,7 +13,7 @@ const initialState = {
   isUserJoinedWithOnlyAudio: false,
 };
 
-const reducer = (state = initialState, action) => {
+const roomReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case RoomActions.OPEN_ROOM:
@@ -63,4 +63,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default roomReducer;

@@ -4,18 +4,17 @@ const initialState = {
   userDetails: null,
 };
 
-const reducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   const { type, payload } = action;
-  const { userDetails } = payload || {};
   switch (type) {
     case AuthActions.SET_USER_DETAILS:
       return {
         ...state,
-        userDetails,
+        userDetails: payload.userDetails,
       };
     default:
       return state;
   }
 };
 
-export default reducer;
+export default authReducer;

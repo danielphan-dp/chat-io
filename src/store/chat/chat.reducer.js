@@ -6,25 +6,24 @@ const initialState = {
   chatMessages: [],
 };
 
-const reducer = (state = initialState, action) => {
+const chatReducer = (state = initialState, action) => {
   const { type, payload } = action;
-  const { chatType, chosenChatDetails, chatMessages } = payload || {};
   switch (type) {
     case ChatActions.SET_CHOSEN_CHAT_DETAILS:
       return {
         ...state,
-        chatType: chatType,
-        chosenChatDetails: chosenChatDetails,
+        chatType: payload.chatType,
+        chosenChatDetails: payload.chosenChatDetails,
         chatMessages: [],
       };
     case ChatActions.SET_MESSAGES:
       return {
         ...state,
-        chatMessages,
+        chatMessages: payload.chatMessages,
       };
     default:
       return state;
   }
 };
 
-export default reducer;
+export default chatReducer;

@@ -11,21 +11,17 @@ const Wrapper = styled('div')({
   display: 'flex',
 });
 
-const Messenger = ({ chatType, chosenChatDetails, chatMessages }) => {
+const Messenger = ({ chosenChatDetails }) => {
   return (
     <Wrapper>
-      {!chosenChatDetails ? (
-        <WelcomeMessage />
-      ) : (
-        <MessengerContent chosenChatDetails={chosenChatDetails} />
-      )}
+      {!chosenChatDetails ? <WelcomeMessage /> : <MessengerContent {...{ chosenChatDetails }} />}
     </Wrapper>
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ chat }) => {
   return {
-    ...state.chat,
+    ...chat,
   };
 };
 
