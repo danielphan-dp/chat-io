@@ -64,6 +64,12 @@ run the processes in 2 separate Terminal windows.
     ```
 
 7. The web application will be available in [localhost:3000](http://localhost:3000).
+8. (Optional) Create different connected clients in different browsers.
+
+   ![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)
+   ![Edge](https://img.shields.io/badge/Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white)
+   ![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)
+   ![Opera](https://img.shields.io/badge/Opera-FF1B2D?style=for-the-badge&logo=Opera&logoColor=white)
 
 ### Usage Examples
 
