@@ -8,7 +8,8 @@
 ### Abstract
 
 A full-stack web application which supports many useful real-time features including:
-text messaging, video/voice calling, notifications, and many more.
+text messaging, video/voice calling, notifications, and many more. Try it out in a few simple
+installation commands.
 
 ### Core Technologies
 
@@ -44,7 +45,14 @@ text messaging, video/voice calling, notifications, and many more.
     cd <path-to-back-end-repo>
     npm install
     ```
-5. Run the back-end, then the front-end in 2 separate Terminal windows. At the moment, it's optimal to
+5. Create `.env` files for the back-end.
+    ```shell
+    # content of the .env file for the back-end
+    API_PORT=5002
+    MONGO_URI=placeholder-for-your-mongodb-uri
+    TOKEN_KEY=placeholder-for-a-secure-jwt-token-secret-key
+    ```
+6. Run the back-end, then the front-end in 2 separate Terminal windows. At the moment, it's optimal to
 run the processes in 2 separate Terminal windows.
     ```sh
     # inside back-end repo and the associated Terminal window
@@ -55,7 +63,7 @@ run the processes in 2 separate Terminal windows.
     npm start
     ```
 
-The web application will be available in [localhost:3000](http://localhost:3000).
+7. The web application will be available in [localhost:3000](http://localhost:3000).
 
 ### Usage
 
