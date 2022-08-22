@@ -65,25 +65,11 @@ run the processes in 2 separate Terminal windows.
 
 7. The web application will be available in [localhost:3000](http://localhost:3000).
 
-### Usage
-
-### Sign Up
-Enter your e-mail, username and chosen password (ideally a strong password).
-<p align="center">
-  <img src="./images/register/register-1.png" alt="register-image" width="90%" />
-</p>
-
-The submit button should be available immediately after valid input is entered.
+### Usage Examples
 
 <p align="center">
   <img src="./images/register/register-2.png" alt="register-image" width="90%" />
 </p>
-
-You are all set at this point!
-
-### Sign In
-
-Enter your registered credentials, and you will be automatically redirected to the dashboard page.
 
 <p align="center">
   <img src="./images/sign-in/sign-in-1.png" alt="sign-in-image" width="90%" />
@@ -93,22 +79,6 @@ Enter your registered credentials, and you will be automatically redirected to t
   <img src="./images/sign-in/sign-in-2.png" alt="sign-in-image" width="90%" />
 </p>
 
-The server will provide promt when invalid credentials are entered.
-
-<p align="center">
-  <img src="./images/sign-in/sign-in-3.png" alt="sign-in-image" width="90%" />
-</p>
-
-<p align="center">
-  <img src="./images/sign-in/sign-in-4.png" alt="sign-in-image" width="90%" />
-</p>
-
-### Dashboard UI
-<p align="center">
-  <img src="./images/dashboard/dashboard-1.png" alt="dashboard-image" width="90%" />
-</p>
-
-### Send Friend Request
 <p align="center">
   <img src="./images/add-friend/add-friend-1.png" alt="dashboard-image" width="90%" />
 </p>
@@ -123,23 +93,13 @@ Your friend request will be updated in real-time to the other user!
   <img src="./images/add-friend/add-friend-3.png" alt="dashboard-image" width="90%"/>
 </p>
 
-### Accept Friend Request
-
 <p align="center">
   <img src="./images/add-friend/add-friend-4.png" alt="dashboard-image" width="90%"/>
 </p>
 
-### Text Message
-
 <p align="center">
   <img src="./images/send-message/send-message-1.png" alt="dashboard-image" width="90%"/>
 </p>
-
-### Video Calling
-
-### Video Call Rooms
-
-### Screen sharing
 
 
 ### Features
