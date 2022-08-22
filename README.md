@@ -55,11 +55,9 @@ run the processes in 2 separate Terminal windows.
     npm start
     ```
 
+The web application will be available in [localhost:3000](http://localhost:3000).
 
-
-The application should be available in [localhost:3000](localhost:3000).
-
-## Usage
+### Usage
 
 ### Sign Up
 Enter your e-mail, username and chosen password (ideally a strong password).
